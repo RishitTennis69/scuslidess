@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gleo — SCU Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F4ED;
+    --bg-2: #FFFFFF;
+    --ink: #0A0E1A;
+    --ink-dim: #3D4654;
+    --ink-mute: #7F8699;
+    --line: rgba(10,14,26,0.10);
+    --line-strong: rgba(10,14,26,0.22);
+    --blue: #2E7BFF;
+    --blue-bright: #1E5FE0;
+    --blue-soft: rgba(46,123,255,0.10);
+    --cream: #EFE9DB;
+    --warn: #E8563A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #E3DFD2; font-family: 'Space Grotesk', sans-serif; }
+  section {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ---------- Shared slide chrome ---------- */
+  .slide-pad {
+    position: absolute; inset: 0;
+    padding: 100px 120px 80px 120px;
+    display: flex; flex-direction: column;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+  }
+  .slide-num {
+    position: absolute;
+    top: 56px; right: 120px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+  }
+  .wordmark-footer {
+    position: absolute;
+    bottom: 56px; left: 120px;
+    display: flex; align-items: center; gap: 14px;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.06em;
+  }
+  .wordmark-footer .wm { color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.01em; }
+  .wordmark-footer .wm b { color: var(--blue-bright); }
+  .wordmark-footer .sep { width: 1px; height: 18px; background: var(--line-strong); }
+
+  /* ---------- Wordmark ---------- */
+  .gleo-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .gleo-logo .dot {
+    color: var(--blue-bright);
+  }
+
+  /* ---------- Slide 01: Title ---------- */
+  .s-title {
+    background:
+      radial-gradient(1200px 800px at 80% 110%, rgba(46,123,255,0.20), transparent 60%),
+      radial-gradient(900px 700px at 10% 0%, rgba(91,163,255,0.08), transparent 60%),
+      var(--bg);
+  }
+  .s-title .grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(1400px 900px at 30% 50%, var(--ink) 40%, transparent 75%);
+    opacity: 0.7;
+  }
+  .s-title .content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .s-title .big-logo {
+    font-size: 280px;
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+  }
+  .s-title .big-logo .dot { color: var(--blue-bright); }
+  .s-title .tagline {
+    font-family: 'Instrument Serif', serif;
+    font-size: 80px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    max-width: 1100px;
+  }
+  .s-title .tagline em { color: var(--blue-bright); font-style: italic; }
+  .s-title .meta {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .s-title .meta .right { text-align: right; color: var(--ink-dim); }
+
+  /* ---------- Slide 02: Big stat ---------- */
+  .s-stat { background: var(--bg); }
+  .s-stat .prompt-stack {
+    position: absolute;
+    right: 120px; top: 140px;
+    width: 620px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .s-stat .prompt-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 22px 28px;
+    display: flex; flex-direction: column; gap: 10px;
+    box-shadow: 0 30px 80px rgba(10,14,26,0.12);
+  }
+  .s-stat .prompt-card.p2 { opacity: 0.7; transform: translateX(-30px); }
+  .s-stat .prompt-card.p3 { opacity: 0.4; transform: translateX(-60px); }
+  .s-stat .prompt-card .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--ink-dim);
+    letter-spacing: 0.08em;
+  }
+  .s-stat .prompt-card .q {
+    font-size: 24px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .s-stat .stat-wrap {
+    position: absolute; left: 120px; bottom: 160px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .s-stat .stat-num {
+    font-size: 380px;
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    line-height: 0.85;
+    color: var(--ink);
+    background: linear-gradient(180deg, #0F1524 0%, #2E7BFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .s-stat .stat-label {
+    font-size: 36px;
+    color: var(--ink-dim);
+    font-weight: 400;
+    max-width: 900px;
+    line-height: 1.2;
+  }
+
+  /* ---------- Slide 03: Problem ---------- */
+  .s-problem { background: var(--bg); }
+  .s-problem .title {
+    font-size: 72px; font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    max-width: 900px;
+    margin-top: 20px;
+  }
+  .s-problem .title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--blue-bright);
+  }
+  .s-problem .chat-col {
+    position: absolute;
+    right: 120px; top: 420px;
+    width: 680px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .chat-bubble {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 22px 28px;
+    font-size: 26px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .chat-bubble.user {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #FFFFFF;
+    align-self: flex-end;
+    max-width: 560px;
+    margin-left: auto;
+    border-bottom-right-radius: 6px;
+  }
+  .chat-bubble.ai {
+    max-width: 620px;
+    border-bottom-left-radius: 6px;
+    color: var(--ink-dim);
+  }
+  .chat-bubble.ai strong { color: var(--ink); font-weight: 600; }
+  .chat-bubble .biz {
+    color: var(--blue-bright); font-weight: 600;
+  }
+  .chat-bubble .strike { color: var(--ink-mute); text-decoration: line-through; }
+
+  .s-problem .cost-card {
+    position: absolute;
+    left: 120px; bottom: 160px;
+    display: flex; align-items: flex-end; gap: 40px;
+  }
+  .s-problem .cost-card .amount {
+    font-size: 180px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    color: var(--warn);
+  }
+  .s-problem .cost-card .desc {
+    font-size: 28px;
+    color: var(--ink-dim);
+    line-height: 1.3;
+    max-width: 380px;
+    padding-bottom: 20px;
+  }
+  .s-problem .cost-card .desc b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Slide 04: Solution ---------- */
+  .s-solution .h1 {
+    font-size: 80px; font-weight: 600;
+    letter-spacing: -0.03em; line-height: 1.05;
+    margin-top: 20px;
+    max-width: 1300px;
+  }
+  .s-solution .h1 em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--blue-bright);
+  }
+  .s-solution .three-col {
+    position: absolute;
+    left: 120px; right: 120px; bottom: 140px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+  }
+  .sol-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 36px 36px 40px;
+    position: relative;
+    min-height: 380px;
+    display: flex; flex-direction: column;
+  }
+  .sol-card .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--blue-bright);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+  }
+  .sol-card .t {
+    font-size: 42px; font-weight: 600;
+    letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .sol-card .d {
+    font-size: 24px;
+    color: var(--ink-dim);
+    line-height: 1.4;
+  }
+  .sol-card .mini {
+    margin-top: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--ink-mute);
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    line-height: 1.55;
+  }
+  .sol-card .mini code {
+    color: var(--blue-bright);
+  }
+
+  /* ---------- Slide 05: Demo placeholder ---------- */
+  .s-demo { background: var(--bg); }
+  .s-demo .demo-shell {
+    position: absolute;
+    left: 120px; right: 120px; top: 280px; bottom: 140px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .s-demo .demo-chrome {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 14px;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+  }
+  .s-demo .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .s-demo .dot.r { background: #FF5F57; } .s-demo .dot.y { background: #FEBC2E; } .s-demo .dot.g { background: #28C840; }
+  .s-demo .demo-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .s-demo .play {
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 20px 60px rgba(46,123,255,0.5);
+  }
+  .s-demo .play::before {
+    content: '';
+    display: block;
+    border-style: solid;
+    border-width: 24px 0 24px 40px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 10px;
+  }
+  .s-demo .hint {
+    font-size: 32px;
+    color: var(--ink-dim);
+  }
+  .s-demo .hint b { color: var(--ink); }
+
+  /* ---------- Slide 06: Persona ---------- */
+  .s-persona { background: var(--bg); }
+  .s-persona .left {
+    position: absolute;
+    left: 120px; top: 200px;
+    width: 540px;
+  }
+  .s-persona .mugshot {
+    width: 540px; height: 540px;
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at 50% 40%, #E8C9A0 0%, #C79968 55%, #8A6136 100%);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+  }
+  .s-persona .mugshot svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .s-persona .name {
+    font-size: 56px; font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-top: 30px;
+  }
+  .s-persona .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--ink-mute);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  .s-persona .right {
+    position: absolute;
+    right: 120px; top: 200px;
+    width: 940px;
+  }
+  .s-persona .quote {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 60px;
+    position: relative;
+    padding-left: 40px;
+  }
+  .s-persona .quote::before {
+    content: '"';
+    position: absolute; left: -10px; top: -30px;
+    font-size: 140px;
+    color: var(--blue-bright);
+    line-height: 1;
+    font-family: 'Instrument Serif', serif;
+  }
+  .s-persona .pain-list {
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .s-persona .pain {
+    display: grid; grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    font-size: 28px;
+    color: var(--ink-dim);
+  }
+  .s-persona .pain:last-child { border-bottom: 1px solid var(--line); }
+  .s-persona .pain .k {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--blue-bright);
+    letter-spacing: 0.1em;
+  }
+  .s-persona .pain b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Slide 07: Competitive landscape ---------- */
+  .s-comp .title { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-comp .grid {
+    position: absolute;
+    left: 120px; right: 120px; bottom: 140px; top: 300px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+  }
+  .s-comp .col {
+    border-radius: 24px;
+    padding: 40px 40px 44px;
+    display: flex; flex-direction: column;
+    gap: 24px;
+  }
+  .s-comp .col.them {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    color: var(--ink-dim);
+  }
+  .s-comp .col.us {
+    background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%);
+    border: 1px solid var(--blue);
+    box-shadow: 0 20px 80px rgba(46,123,255,0.35);
+    color: #FFFFFF;
+  }
+  .s-comp .col h3 {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .s-comp .col.them h3 { color: var(--ink-mute); }
+  .s-comp .col.us h3 { color: #CFE0FF; }
+  .s-comp .col .name {
+    font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .s-comp .col.them .name { color: var(--ink-dim); }
+  .s-comp .col .sub {
+    font-family: 'Instrument Serif', serif; font-style: italic;
+    font-size: 28px;
+    color: inherit;
+    opacity: 0.7;
+    margin-top: -14px;
+  }
+  .s-comp .row {
+    display: flex; flex-direction: column;
+    gap: 8px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+  .s-comp .col.us .row { border-top-color: rgba(255,255,255,0.25); }
+  .s-comp .row .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.55;
+  }
+  .s-comp .row .val {
+    font-size: 28px;
+    line-height: 1.25;
+    color: inherit;
+  }
+  .s-comp .col.us .row .val b { color: #CFE0FF; font-weight: 600; }
+  .s-comp .col.us .lbl { color: rgba(255,255,255,0.6); }
+  .s-comp .col.us .val { color: #FFFFFF; }
+  .s-comp .col.us .sub { color: rgba(255,255,255,0.7); }
+  .s-comp .col.us .price { color: rgba(255,255,255,0.7); }
+  .s-comp .price {
+    margin-top: auto;
+    font-size: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.02em;
+    color: inherit;
+    opacity: 0.8;
+  }
+  .s-comp .price .big { font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; display: block; margin-top: 4px; }
+  .s-comp .col.them .price .big { color: var(--ink-dim); }
+  .s-comp .col.us .price .big { color: #FFFFFF; }
+  .s-comp .col.us .price .big .mo { color: #CFE0FF; font-size: 24px; font-weight: 500; margin-left: 6px; }
+
+  /* ---------- Slide 08: GTM ---------- */
+  .s-gtm .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-gtm .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
+  .s-gtm .two-col {
+    position: absolute;
+    left: 120px; right: 120px; bottom: 140px; top: 280px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .gtm-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 40px 40px 44px;
+    display: flex; flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+  .gtm-card .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+  }
+  .gtm-card .t {
+    font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .gtm-card .flow {
+    display: flex; align-items: center; gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .gtm-card .flow .node {
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 24px;
+    color: var(--ink);
+  }
+  .gtm-card .flow .arr {
+    color: var(--blue-bright);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+  }
+  .gtm-card .result {
+    margin-top: auto;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+    font-size: 28px;
+    color: var(--ink-dim);
+  }
+  .gtm-card .result b { color: var(--blue-bright); font-weight: 600; }
+  .gtm-card .big-num {
+    font-size: 110px; font-weight: 700;
+    letter-spacing: -0.04em; line-height: 1;
+    color: var(--ink);
+  }
+  .gtm-card .big-num .plus { color: var(--blue-bright); }
+
+  /* ---------- Slide 09: Pricing ---------- */
+  .s-pricing .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-pricing .two {
+    position: absolute;
+    left: 120px; right: 120px; bottom: 140px; top: 300px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .price-card {
+    border-radius: 28px;
+    padding: 44px;
+    display: flex; flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+  .price-card.one {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+  }
+  .price-card.monthly {
+    background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%);
+    border: 1px solid var(--blue);
+    box-shadow: 0 20px 80px rgba(46,123,255,0.3);
+    color: #FFFFFF;
+  }
+  .price-card .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+  }
+  .price-card .t {
+    font-size: 42px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .price-card .price {
+    display: flex; align-items: baseline; gap: 8px;
+    margin-top: 12px;
+  }
+  .price-card .price .big {
+    font-size: 140px; font-weight: 700; letter-spacing: -0.05em; line-height: 0.9;
+  }
+  .price-card .price .per {
+    font-size: 24px; color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .price-card.monthly .price .big { color: #FFFFFF; }
+  .price-card.monthly .tag { color: #CFE0FF !important; }
+  .price-card ul {
+    margin: 0; padding: 0; list-style: none;
+    display: flex; flex-direction: column;
+    gap: 16px;
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 26px;
+    font-size: 24px;
+    color: var(--ink-dim);
+  }
+  .price-card.monthly ul { border-top-color: rgba(255,255,255,0.25); color: #E8F0FF; }
+  .price-card ul li {
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .price-card ul li::before {
+    content: '+';
+    color: var(--blue-bright);
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    margin-top: 2px;
+  }
+
+  /* ---------- Slide 10: Team ---------- */
+  .s-team .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-team .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
+  .s-team .members {
+    position: absolute;
+    left: 120px; right: 120px; top: 260px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: min-content;
+    gap: 32px;
+  }
+  .member { display: flex; align-items: center; gap: 24px; }
+  .member .avatar {
+    width: 140px; height: 140px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(160deg, #EDEAE1 0%, #FAF8F2 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .member .avatar .initials {
+    font-size: 72px; font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--blue-bright);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .member .name {
+    font-size: 34px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .member .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    color: var(--blue-bright);
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .s-team .origin {
+    position: absolute;
+    left: 120px; right: 120px; top: 500px;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 56px;
+    color: var(--ink-dim);
+    text-align: left;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+  }
+  .s-team .origin b { color: var(--ink); font-style: normal; font-family: 'Space Grotesk'; font-weight: 600; }
+  .s-team .origin em { color: var(--blue-bright); font-style: italic; }
+
+  /* ---------- Slide 11: Close ---------- */
+  .s-close {
+    background:
+      radial-gradient(1200px 800px at 50% 120%, rgba(46,123,255,0.18), transparent 60%),
+      radial-gradient(900px 700px at 0% 0%, rgba(91,163,255,0.08), transparent 60%),
+      var(--bg);
+  }
+  .s-close .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 60px;
+    padding: 100px 120px;
+    text-align: center;
+  }
+  .s-close .big-logo {
+    font-size: 320px; font-weight: 700; letter-spacing: -0.07em; line-height: 1;
+  }
+  .s-close .big-logo .dot { color: var(--blue-bright); }
+  .s-close .tagline {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 80px;
+    font-weight: 400;
+    max-width: 1200px;
+    line-height: 1.05;
+  }
+  .s-close .tagline em { color: var(--blue-bright); }
+  .s-close .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 26px;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<script type="application/json" id="speaker-notes">
+[
+  "Hey everyone. 2.5 billion prompts a day are getting asked on AI chatbots. People are typing things like 'best pediatric dentist in San Jose' straight into ChatGPT instead of Google. And if you're a small business, there's a good chance you're nowhere in those answers. That's the problem we're solving. We're Gleo — the new SEO for the AI era.",
+  "Let's put a number on it. 2.5 billion prompts a day. That's what AI chatbots are answering right now, every single day. This isn't a future problem — this is where your customers already are. And every one of those prompts is a chance to be mentioned… or a chance to get skipped.",
+  "Here's what happens when you get skipped. Someone asks ChatGPT for a pediatric dentist. If your business doesn't show up in the answer, you're invisible — it doesn't matter how good your Google SEO is. For one of our dental clients, a single new patient is worth ten thousand dollars in lifetime value. Miss a few of those a month and you're bleeding tens of thousands of dollars a year — without even knowing why.",
+  "So how do we fix it? Gleo plugs into a small business's website and makes one specific edit that AI models actually care about most: llms-dot-txt. Think of it as a sitemap built specifically for AI crawlers — it tells models exactly what your business does, who it serves, and what questions it can answer. Without it, models are guessing from messy HTML. With it, they cite you by name.",
+  "Quick demo. Gleo runs inside WordPress — and roughly half of small business sites run on WordPress, which is why we can actually make the changes live, not just tell you what's broken. You paste in your site, Gleo audits it, applies the fixes in about sixty seconds, and then you track your AI share-of-voice over time in the dashboard. I'll walk through a real example now.",
+  "This is Mike. Mike owns Big Smiles Dentistry in San Jose — six hundred thousand in ARR. He's the person we built Gleo for. He's been paying thousands of dollars a month on traditional SEO and watching the returns drop off a cliff — fewer leads, higher cost per click, and more of his search traffic now siphoned off by AI answers. He knows ChatGPT is recommending his competitors. He wants in — but he is not going to hire a developer to write schema markup. That's our customer, and there are thirty-six million of them in the US.",
+  "So where do we sit? The GEO monitoring companies — Profound, AthenaHQ, Goodie — they charge five hundred bucks a month to tell enterprise teams what's wrong. They don't fix it, and they're not built for a guy like Mike. Gleo is the opposite of that. We apply the changes automatically, in sixty seconds, for forty-nine dollars a month. Enterprise tools tell you the problem. Gleo fixes it.",
+  "On distribution — we run two loops. First, content-led. We post before-and-after reels on TikTok and Instagram showing a real SMB site going from invisible to cited. One video gets us roughly a hundred signups. Second, partnerships. We white-label Gleo to digital marketing agencies — they bundle it with their existing SEO packages, resell it to their book of small business clients, and we get distribution we don't have to build ourselves. One agency partnership can be worth hundreds of customers.",
+  "Here's how we charge. One-time kickoff fee: a hundred and forty-nine dollars for the initial optimization — the llms-dot-txt, the schema, the answer capsules. Then forty-nine a month for ongoing optimization and the tracking dashboard. Low friction to start, and it compounds from there.",
+  "Three of us. Krish, Varun, and Bhavish. But the real story is how we got here. We met through speech and debate at Bellarmine — four years of arguing, losing, adapting, and winning. Earlier this year we started building websites for small businesses, and we learned fast that websites don't bring customers anymore — AI does. So we pivoted to Gleo. Debate taught us to listen to feedback and change direction fast. That's exactly what building a startup looks like.",
+  "Two and a half billion prompts happen every day. Small businesses are getting left out of all of them. Gleo puts them back in the conversation — in sixty seconds, for forty-nine bucks a month. Be the answer AI gives to your customers. Thanks."
+]
+</script>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- 01 Title -->
+  <section class="s-title" data-label="Title">
+    <div class="grid-bg"></div>
+    <div class="slide-pad content">
+      <div style="display:flex; justify-content: space-between; align-items: flex-start;">
+        <div class="eyebrow">The New SEO — For the AI Era</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: var(--ink-mute); letter-spacing: 0.1em;">SCU PITCH · 2026</div>
+      </div>
+
+      <div>
+        <div class="big-logo">gleo<span class="dot">.</span></div>
+        <div class="tagline" style="margin-top: 72px;">Be the <em>answer</em> AI gives to your customers.</div>
+      </div>
+
+      <div class="meta">
+        <div>Krish Grover · Varun Belligundu · Bhavish Jagani</div>
+        <div class="right">Bellarmine College Preparatory</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Stat -->
+  <section class="s-stat" data-label="2.5B Prompts Daily">
+    <div class="slide-pad">
+      <div style="display:flex; justify-content:space-between; align-items: flex-start;">
+        <div class="eyebrow">The Shift</div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 10</div>
+
+    <div class="prompt-stack">
+      <div class="prompt-card p1">
+        <div class="chip">CHATGPT</div>
+        <div class="q">HVAC businesses in SF that can fix my AC this weekend?</div>
+      </div>
+      <div class="prompt-card p2">
+        <div class="chip">CHATGPT</div>
+        <div class="q">Best pediatric dentist in San Jose for a 4-year-old?</div>
+      </div>
+      <div class="prompt-card p3">
+        <div class="chip">CHATGPT</div>
+        <div class="q">Auto body shop near Cupertino open on a Sunday?</div>
+      </div>
+    </div>
+
+      <div class="stat-wrap">
+        <div class="stat-num">2.5 B</div>
+      <div class="stat-label">prompts answered on AI chatbots <b style="color:var(--ink)">every single day</b> — and your customers are in them.</div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>Source: OpenAI usage reports, 2025</span>
+    </div>
+  </section>
+
+  <!-- 03 Problem -->
+  <section class="s-problem" data-label="The Invisible Business">
+    <div class="slide-pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div class="eyebrow">The Problem</div>
+      </div>
+      <div class="title">If AI doesn't <em>mention</em> your business,<br/>you don't exist to a new customer.</div>
+    </div>
+    <div class="slide-num">02 / 10</div>
+
+    <div class="chat-col">
+      <div class="chat-bubble user">Best pediatric dentist in San Jose for my 4-year-old?</div>
+      <div class="chat-bubble ai">
+        I'd recommend <span class="biz">Dr. Kim's Kids Dental</span> and <span class="biz">Sunshine Smiles</span>. Both have strong reviews for young patients.<br/><br/>
+        <span class="strike">Big Smiles Dentistry</span> <span style="color: var(--ink-mute);">— not found in results.</span>
+      </div>
+    </div>
+
+    <div class="cost-card">
+      <div class="amount">$10K</div>
+      <div class="desc"><b>Lifetime value</b> of one missed dental patient. Miss a handful a month and it's <b>tens of thousands</b> a year — gone.</div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>The silent churn in AI search</span>
+    </div>
+  </section>
+
+  <!-- 04 Solution -->
+  <section class="s-solution" data-label="The Gleo Solution">
+    <div class="slide-pad">
+      <div class="eyebrow">The Solution</div>
+      <div class="h1">Three edits. Sixty seconds.<br/>AI starts <em>mentioning</em> you.</div>
+    </div>
+    <div class="slide-num">03 / 10</div>
+
+    <div class="three-col">
+      <div class="sol-card">
+        <div class="num">01 / ANSWER</div>
+        <div class="t">Prompts, not keywords.</div>
+        <div class="mini"><code>"best dentist"</code><br/>→ <code>"which clinic treats a 4-year-old who fell off his bike"</code></div>
+      </div>
+      <div class="sol-card">
+        <div class="num">02 / STRUCTURE</div>
+        <div class="t">Add <span style="color:var(--blue-bright); font-family:'JetBrains Mono',monospace; font-size: 38px;">llms.txt</span>.</div>
+        <div class="mini">The sitemap built for AI crawlers — without it, models guess from messy HTML and skip you.</div>
+      </div>
+      <div class="sol-card">
+        <div class="num">03 / CONSISTENCY</div>
+        <div class="t">Same story, everywhere.</div>
+        <div class="mini"><code>HOURS ON SITE</code> Mon–Fri 9–5<br/><code>HOURS ON YELP</code> Mon–Fri 10–6<br/><span style="color: var(--warn);">AI sees the conflict → cites a competitor.</span></div>
+      </div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>Live inside WordPress · ~45% of the SMB web</span>
+    </div>
+  </section>
+
+  <!-- 05 Demo -->
+  <section class="s-demo" data-label="Live Demo">
+    <div class="slide-pad">
+      <div class="eyebrow">Demo</div>
+      <div style="font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px;">See it work in 60 seconds.</div>
+    </div>
+    <div class="slide-num">04 / 10</div>
+
+    <div class="demo-shell">
+      <div class="demo-chrome">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span style="margin-left: 20px;">gleo.app/dashboard/big-smiles-dentistry</span>
+      </div>
+      <div class="demo-body">
+        <div class="play"></div>
+        <div class="hint">URL in. <b style="color: var(--blue-bright)">Site optimized.</b> Share-of-voice tracked.</div>
+      </div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>See it work in 60 seconds</span>
+    </div>
+  </section>
+
+  <!-- 06 Persona -->
+  <section class="s-persona" data-label="Target Customer — Mike">
+    <div class="slide-pad">
+      <div class="eyebrow">Target Customer</div>
+    </div>
+    <div class="slide-num">05 / 10</div>
+
+    <div class="left">
+      <div class="mugshot">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&auto=format&fit=crop&q=80" alt="Mike Thompson, dentist" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
+      </div>
+      <div class="name">Mike Thompson, 44</div>
+      <div class="role">Owner · Big Smiles Dentistry · San Jose</div>
+    </div>
+
+    <div class="right">
+      <div class="quote">I keep paying for SEO, but ChatGPT recommends my competitors — not me.</div>
+      <div class="pain-list">
+        <div class="pain"><div class="k">REVENUE</div><div><b>$600K ARR</b> · a single new patient is worth <b>$10K</b> in lifetime value</div></div>
+        <div class="pain"><div class="k">SPEND</div><div>Thousands a month on <b>traditional SEO</b> — fewer leads, higher cost-per-click, AI siphoning search traffic</div></div>
+        <div class="pain"><div class="k">SKILL</div><div><b>Not a developer.</b> Won't touch schema, JSON, or code</div></div>
+        <div class="pain"><div class="k">MARKET</div><div><b>36M</b> small businesses like Mike in the U.S.</div></div>
+      </div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>Persona · The Frustrated Business Owner</span>
+    </div>
+  </section>
+
+  <!-- 07 Competition -->
+  <section class="s-comp" data-label="Competitive Landscape">
+    <div class="slide-pad">
+      <div class="eyebrow">Competition</div>
+      <div class="title">Enterprise tools <em style="font-family:'Instrument Serif',serif; color:var(--blue-bright); font-style:italic; font-weight:400;">tell</em>. Gleo <em style="font-family:'Instrument Serif',serif; color:var(--blue-bright); font-style:italic; font-weight:400;">fixes</em>.</div>
+    </div>
+    <div class="slide-num">06 / 10</div>
+
+    <div class="grid">
+      <div class="col them">
+        <h3>Incumbents</h3>
+        <div class="name">Profound · AthenaHQ · Goodie</div>
+        <div class="sub">"Enterprise GEO monitoring"</div>
+        <div class="row"><div class="lbl">Built for</div><div class="val">Enterprise teams with in-house developers</div></div>
+        <div class="row"><div class="lbl">What it does</div><div class="val">Tells you the problem. Doesn't fix it.</div></div>
+        <div class="row"><div class="lbl">Time to value</div><div class="val">Weeks of engineering work</div></div>
+        <div class="price">Starting at<span class="big" style="color: var(--ink);">$500<span style="font-size:24px; color: var(--ink-mute); margin-left: 6px;">/mo</span></span></div>
+      </div>
+
+      <div class="col us">
+        <h3>Gleo</h3>
+        <div class="name">gleo<span style="color:var(--blue-bright)">.</span></div>
+        <div class="sub">"AI influence for small businesses"</div>
+        <div class="row"><div class="lbl">Built for</div><div class="val">Every small business — <b>no dev team required</b></div></div>
+        <div class="row"><div class="lbl">What it does</div><div class="val"><b>Applies changes automatically</b>, in 60 seconds</div></div>
+        <div class="row"><div class="lbl">Time to value</div><div class="val"><b>One minute</b>, live in WordPress</div></div>
+        <div class="price">Starting at<span class="big">$49<span class="mo">/mo</span></span></div>
+      </div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>10× cheaper, 100× faster, built for Mike</span>
+    </div>
+  </section>
+
+  <!-- 08 GTM -->
+  <section class="s-gtm" data-label="Go-To-Market">
+    <div class="slide-pad">
+      <div class="eyebrow">Go-To-Market</div>
+      <div class="h1">Two loops to <em>100 users</em> from one spark.</div>
+    </div>
+    <div class="slide-num">07 / 10</div>
+
+    <div class="two-col">
+      <div class="gtm-card">
+        <div class="tag">01 · Content-led</div>
+        <div class="t">Before-and-after reels.</div>
+        <div class="flow">
+          <div class="node">Run audit on real SMB</div>
+          <div class="arr">→</div>
+          <div class="node">Post before / after reel</div>
+          <div class="arr">→</div>
+          <div class="node">SMBs sign up</div>
+        </div>
+        <div class="big-num" style="font-size: 130px;">500<span class="plus">+</span></div>
+        <div class="result"><b>customers per viral reel.</b> More customers → more proof → more reels.</div>
+      </div>
+
+      <div class="gtm-card" style="background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%); border-color: var(--blue); color: #FFFFFF; box-shadow: 0 20px 80px rgba(46,123,255,0.3);">
+        <div class="tag" style="color: #CFE0FF;">02 · Partnerships</div>
+        <div class="t" style="color: #FFFFFF;">White-label for agencies.</div>
+        <div class="flow">
+          <div class="node" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">Digital agency</div>
+          <div class="arr" style="color: #CFE0FF;">→</div>
+          <div class="node" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">Bundles Gleo w/ SEO</div>
+          <div class="arr" style="color: #CFE0FF;">→</div>
+          <div class="node" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">Resells to their SMBs</div>
+        </div>
+        <div class="big-num" style="font-size: 130px; color: #FFFFFF;">100<span class="plus" style="color: #CFE0FF;">+</span></div>
+        <div class="result" style="color: #E8F0FF;"><b style="color: #FFFFFF;">customers per partnership.</b> One deal, hundreds of SMBs — distribution we don't have to build.</div>
+      </div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>Two loops, compounding</span>
+    </div>
+  </section>
+
+  <!-- 09 Pricing -->
+  <section class="s-pricing" data-label="Pricing">
+    <div class="slide-pad">
+      <div class="eyebrow">Pricing</div>
+      <div class="h1">Cheap to start. Grows with you.</div>
+    </div>
+    <div class="slide-num">08 / 10</div>
+
+    <div class="two">
+      <div class="price-card one">
+        <div class="tag">One-time · Kickoff</div>
+        <div class="t">Initial site optimization</div>
+        <div class="price"><span class="big">$149</span><span class="per">/ site</span></div>
+        <ul>
+          <li>Full GEO audit + fixes applied</li>
+          <li><code style="font-family:'JetBrains Mono',monospace; color:var(--blue-bright)">llms.txt</code> + JSON-LD schema</li>
+          <li>Live inside WordPress</li>
+        </ul>
+      </div>
+      <div class="price-card monthly">
+        <div class="tag">Recurring · GEO Tracking</div>
+        <div class="t" style="color:#FFFFFF">Monthly optimization + dashboard</div>
+        <div class="price"><span class="big">$49</span><span class="per" style="color:#CFE0FF">/ month</span></div>
+        <ul>
+          <li>AI share-of-voice tracking</li>
+          <li>Source &amp; citation monitoring</li>
+          <li>Ongoing model-shift updates</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>A fraction of what the incumbents charge</span>
+    </div>
+  </section>
+
+  <!-- 10 Team -->
+  <section class="s-team" data-label="The Team">
+    <div class="slide-pad">
+      <div class="eyebrow">The Team</div>
+      <div class="h1">From <em>debate stage</em> to startup pivot.</div>
+    </div>
+    <div class="slide-num">09 / 10</div>
+
+    <div class="members">
+      <div class="member">
+        <div class="avatar"><div class="initials">K</div></div>
+        <div><div class="name">Krish</div><div class="role">CEO</div></div>
+      </div>
+      <div class="member">
+        <div class="avatar"><div class="initials">V</div></div>
+        <div><div class="name">Varun</div><div class="role">CMO</div></div>
+      </div>
+      <div class="member">
+        <div class="avatar"><div class="initials">B</div></div>
+        <div><div class="name">Bhavish</div><div class="role">CTO</div></div>
+      </div>
+    </div>
+
+    <div class="origin">
+      We met through <b>speech &amp; debate</b> at Bellarmine —<br/>
+      four years of <em>arguing, losing, adapting, winning.</em><br/><br/>
+      We built <b>websites</b> for small businesses.<br/>
+      Learned fast: websites don't bring customers — <em>AI does.</em><br/><br/>
+      So we <b>pivoted to Gleo.</b>
+    </div>
+
+    <div class="wordmark-footer">
+      <span class="wm">gleo<b>.</b></span>
+      <span class="sep"></span>
+      <span>Bellarmine College Preparatory</span>
+    </div>
+  </section>
+
+  <!-- 11 Close -->
+  <section class="s-close" data-label="Closing">
+    <div class="grid-bg" style="position:absolute;inset:0;background-image:linear-gradient(rgba(10,14,26,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(10,14,26,0.06) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(1400px 900px at 50% 50%, #000 40%, transparent 75%); opacity: 0.8;"></div>
+    <div class="slide-num" style="color: var(--ink-mute)">10 / 10</div>
+    <div class="content">
+      <div class="sub">The New SEO for the AI Era</div>
+      <div class="big-logo">gleo<span class="dot">.</span></div>
+      <div class="tagline">Be the <em>answer</em> AI gives to your customers.</div>
+      <div class="sub" style="margin-top: 40px;">Krish · Varun · Bhavish Jagani &nbsp;·&nbsp; Bellarmine &nbsp;·&nbsp; 2026</div>
+    </div>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>

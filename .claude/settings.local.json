@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"C:\\\\Users\\\\Krish Grover\\\\.claude\\\\projects\\\\C--Users-Krish-Grover-Documents-scuslide\\\\design_extract\")",
+      "Bash(tar -xf \"C:\\\\Users\\\\Krish Grover\\\\.claude\\\\projects\\\\C--Users-Krish-Grover-Documents-scuslide\\\\8971dd66-6634-4b26-8a7b-2e21dbc71912\\\\tool-results\\\\design_output.html\" -C \"C:\\\\Users\\\\Krish Grover\\\\.claude\\\\projects\\\\C--Users-Krish-Grover-Documents-scuslide\\\\design_extract\")",
+      "Bash(mkdir -p '/c/Users/Krish Grover/.claude/projects/C--Users-Krish-Grover-Documents-scuslide/design_extract')",
+      "Bash(tar -xf '/c/Users/Krish Grover/.claude/projects/C--Users-Krish-Grover-Documents-scuslide/8971dd66-6634-4b26-8a7b-2e21dbc71912/tool-results/design_output.html' -C '/c/Users/Krish Grover/.claude/projects/C--Users-Krish-Grover-Documents-scuslide/design_extract')",
+      "Read(//c/Users/Krish Grover/.claude/projects/C--Users-Krish-Grover-Documents-scuslide/design_extract/**)",
+      "Bash(cp \"/c/Users/Krish Grover/.claude/projects/C--Users-Krish-Grover-Documents-scuslide/design_extract/gleo-slides/project/Gleo Pitch Deck.html\" \"/c/Users/Krish Grover/Documents/scuslide/Gleo Pitch Deck.html\")",
+      "Bash(cp \"/c/Users/Krish Grover/.claude/projects/C--Users-Krish-Grover-Documents-scuslide/design_extract/gleo-slides/project/deck-stage.js\" \"/c/Users/Krish Grover/Documents/scuslide/deck-stage.js\")"
+    ]
+  }
+}
