@@ -397,32 +397,32 @@
   .s-persona .quote {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 400;
     line-height: 1.15;
     color: var(--ink);
-    margin-bottom: 60px;
+    margin-bottom: 36px;
     position: relative;
     padding-left: 40px;
   }
   .s-persona .quote::before {
     content: '"';
-    position: absolute; left: -10px; top: -30px;
-    font-size: 140px;
+    position: absolute; left: -10px; top: -20px;
+    font-size: 110px;
     color: var(--blue-bright);
     line-height: 1;
     font-family: 'Instrument Serif', serif;
   }
   .s-persona .pain-list {
-    display: flex; flex-direction: column; gap: 22px;
+    display: flex; flex-direction: column; gap: 0;
   }
   .s-persona .pain {
     display: grid; grid-template-columns: 100px 1fr;
     align-items: center;
     gap: 20px;
-    padding: 18px 0;
+    padding: 14px 0;
     border-top: 1px solid var(--line);
-    font-size: 28px;
+    font-size: 24px;
     color: var(--ink-dim);
   }
   .s-persona .pain:last-child { border-bottom: 1px solid var(--line); }
@@ -740,6 +740,20 @@
     color: var(--ink-mute);
     text-transform: uppercase;
   }
+
+  /* ---------- Step-reveal animations ---------- */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 </style>
 </head>
 <body>
@@ -792,7 +806,7 @@
     </div>
     <div class="slide-num">01 / 10</div>
 
-    <div class="prompt-stack">
+    <div class="prompt-stack" data-reveal="2">
       <div class="prompt-card p1">
         <div class="chip">CHATGPT</div>
         <div class="q">HVAC businesses in SF that can fix my AC this weekend?</div>
@@ -808,8 +822,8 @@
     </div>
 
       <div class="stat-wrap">
-        <div class="stat-num">2.5 B</div>
-      <div class="stat-label">prompts answered on AI chatbots <b style="color:var(--ink)">every single day</b> — and your customers are in them.</div>
+        <div class="stat-num" data-reveal="1">2.5 B</div>
+      <div class="stat-label" data-reveal="3">prompts answered on AI chatbots <b style="color:var(--ink)">every single day</b> — and your customers are in them.</div>
     </div>
 
     <div class="wordmark-footer">
@@ -830,14 +844,14 @@
     <div class="slide-num">02 / 10</div>
 
     <div class="chat-col">
-      <div class="chat-bubble user">Best pediatric dentist in San Jose for my 4-year-old?</div>
-      <div class="chat-bubble ai">
+      <div class="chat-bubble user" data-reveal="1">Best pediatric dentist in San Jose for my 4-year-old?</div>
+      <div class="chat-bubble ai" data-reveal="2">
         I'd recommend <span class="biz">Dr. Kim's Kids Dental</span> and <span class="biz">Sunshine Smiles</span>. Both have strong reviews for young patients.<br/><br/>
         <span class="strike">Big Smiles Dentistry</span> <span style="color: var(--ink-mute);">— not found in results.</span>
       </div>
     </div>
 
-    <div class="cost-card">
+    <div class="cost-card" data-reveal="3">
       <div class="amount">$10K</div>
       <div class="desc"><b>Lifetime value</b> of one missed dental patient. Miss a handful a month and it's <b>tens of thousands</b> a year — gone.</div>
     </div>
@@ -858,17 +872,17 @@
     <div class="slide-num">03 / 10</div>
 
     <div class="three-col">
-      <div class="sol-card">
+      <div class="sol-card" data-reveal="1">
         <div class="num">01 / ANSWER</div>
         <div class="t">Prompts, not keywords.</div>
         <div class="mini"><code>"best dentist"</code><br/>→ <code>"which clinic treats a 4-year-old who fell off his bike"</code></div>
       </div>
-      <div class="sol-card">
+      <div class="sol-card" data-reveal="2">
         <div class="num">02 / STRUCTURE</div>
         <div class="t">Add <span style="color:var(--blue-bright); font-family:'JetBrains Mono',monospace; font-size: 38px;">llms.txt</span>.</div>
         <div class="mini">The sitemap built for AI crawlers — without it, models guess from messy HTML and skip you.</div>
       </div>
-      <div class="sol-card">
+      <div class="sol-card" data-reveal="3">
         <div class="num">03 / CONSISTENCY</div>
         <div class="t">Same story, everywhere.</div>
         <div class="mini"><code>HOURS ON SITE</code> Mon–Fri 9–5<br/><code>HOURS ON YELP</code> Mon–Fri 10–6<br/><span style="color: var(--warn);">AI sees the conflict → cites a competitor.</span></div>
@@ -915,7 +929,7 @@
     </div>
     <div class="slide-num">05 / 10</div>
 
-    <div class="left">
+    <div class="left" data-reveal="1">
       <div class="mugshot">
         <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&auto=format&fit=crop&q=80" alt="Mike Thompson, dentist" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
       </div>
@@ -924,12 +938,12 @@
     </div>
 
     <div class="right">
-      <div class="quote">I keep paying for SEO, but ChatGPT recommends my competitors — not me.</div>
+      <div class="quote" data-reveal="2">I keep paying for SEO, but ChatGPT recommends my competitors — not me.</div>
       <div class="pain-list">
-        <div class="pain"><div class="k">REVENUE</div><div><b>$600K ARR</b> · a single new patient is worth <b>$10K</b> in lifetime value</div></div>
-        <div class="pain"><div class="k">SPEND</div><div>Thousands a month on <b>traditional SEO</b> — fewer leads, higher cost-per-click, AI siphoning search traffic</div></div>
-        <div class="pain"><div class="k">SKILL</div><div><b>Not a developer.</b> Won't touch schema, JSON, or code</div></div>
-        <div class="pain"><div class="k">MARKET</div><div><b>36M</b> small businesses like Mike in the U.S.</div></div>
+        <div class="pain" data-reveal="3"><div class="k">REVENUE</div><div><b>$600K ARR</b> · one new patient = <b>$10K</b> lifetime value</div></div>
+        <div class="pain" data-reveal="4"><div class="k">SPEND</div><div>Thousands/mo on <b>traditional SEO</b> — fewer leads, AI siphoning traffic</div></div>
+        <div class="pain" data-reveal="5"><div class="k">SKILL</div><div><b>Not a developer.</b> Won't touch schema or code</div></div>
+        <div class="pain" data-reveal="6"><div class="k">MARKET</div><div><b>36M</b> small businesses like Mike in the U.S.</div></div>
       </div>
     </div>
 
@@ -949,7 +963,7 @@
     <div class="slide-num">06 / 10</div>
 
     <div class="grid">
-      <div class="col them">
+      <div class="col them" data-reveal="1">
         <h3>Incumbents</h3>
         <div class="name">Profound · AthenaHQ · Goodie</div>
         <div class="sub">"Enterprise GEO monitoring"</div>
@@ -959,7 +973,7 @@
         <div class="price">Starting at<span class="big" style="color: var(--ink);">$500<span style="font-size:24px; color: var(--ink-mute); margin-left: 6px;">/mo</span></span></div>
       </div>
 
-      <div class="col us">
+      <div class="col us" data-reveal="2">
         <h3>Gleo</h3>
         <div class="name">gleo<span style="color:var(--blue-bright)">.</span></div>
         <div class="sub">"AI influence for small businesses"</div>
@@ -986,7 +1000,7 @@
     <div class="slide-num">07 / 10</div>
 
     <div class="two-col">
-      <div class="gtm-card">
+      <div class="gtm-card" data-reveal="1">
         <div class="tag">01 · Content-led</div>
         <div class="t">Before-and-after reels.</div>
         <div class="flow">
@@ -1000,7 +1014,7 @@
         <div class="result"><b>customers per viral reel.</b> More customers → more proof → more reels.</div>
       </div>
 
-      <div class="gtm-card" style="background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%); border-color: var(--blue); color: #FFFFFF; box-shadow: 0 20px 80px rgba(46,123,255,0.3);">
+      <div class="gtm-card" data-reveal="2" style="background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%); border-color: var(--blue); color: #FFFFFF; box-shadow: 0 20px 80px rgba(46,123,255,0.3);">
         <div class="tag" style="color: #CFE0FF;">02 · Partnerships</div>
         <div class="t" style="color: #FFFFFF;">White-label for agencies.</div>
         <div class="flow">
@@ -1031,7 +1045,7 @@
     <div class="slide-num">08 / 10</div>
 
     <div class="two">
-      <div class="price-card one">
+      <div class="price-card one" data-reveal="1">
         <div class="tag">One-time · Kickoff</div>
         <div class="t">Initial site optimization</div>
         <div class="price"><span class="big">$149</span><span class="per">/ site</span></div>
@@ -1041,7 +1055,7 @@
           <li>Live inside WordPress</li>
         </ul>
       </div>
-      <div class="price-card monthly">
+      <div class="price-card monthly" data-reveal="2">
         <div class="tag">Recurring · GEO Tracking</div>
         <div class="t" style="color:#FFFFFF">Monthly optimization + dashboard</div>
         <div class="price"><span class="big">$49</span><span class="per" style="color:#CFE0FF">/ month</span></div>
@@ -1068,7 +1082,7 @@
     </div>
     <div class="slide-num">09 / 10</div>
 
-    <div class="members">
+    <div class="members" data-reveal="1">
       <div class="member">
         <div class="avatar"><div class="initials">K</div></div>
         <div><div class="name">Krish</div><div class="role">CEO</div></div>
@@ -1083,7 +1097,7 @@
       </div>
     </div>
 
-    <div class="origin">
+    <div class="origin" data-reveal="2">
       We met through <b>speech &amp; debate</b> at Bellarmine —<br/>
       four years of <em>arguing, losing, adapting, winning.</em><br/><br/>
       We built <b>websites</b> for small businesses.<br/>
@@ -1113,5 +1127,48 @@
 </deck-stage>
 
 <script src="deck-stage.js"></script>
+<script>
+(function () {
+  const deck = document.querySelector('deck-stage');
+  let steps = [];
+  let maxRevealed = -1;
+
+  function collectSteps(slide) {
+    const els = Array.from(slide.querySelectorAll('[data-reveal]'));
+    const groups = {};
+    els.forEach(el => {
+      const n = parseInt(el.dataset.reveal, 10);
+      if (!groups[n]) groups[n] = [];
+      groups[n].push(el);
+      el.classList.remove('revealed');
+    });
+    steps = Object.entries(groups)
+      .sort((a, b) => +a[0] - +b[0])
+      .map(([, els]) => els);
+    maxRevealed = -1;
+  }
+
+  function hasMore() { return maxRevealed < steps.length - 1; }
+
+  function revealNext() {
+    maxRevealed++;
+    steps[maxRevealed].forEach(el => el.classList.add('revealed'));
+  }
+
+  deck.addEventListener('slidechange', e => collectSteps(e.detail.slide));
+
+  window.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    const fwd = e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ' || e.key === 'Spacebar';
+    if (fwd && hasMore()) {
+      revealNext();
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }, true); // capture — fires before deck-stage's bubble-phase handler
+})();
+</script>
 </body>
 </html>
