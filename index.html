@@ -144,8 +144,8 @@
     display: flex; flex-direction: column; gap: 10px;
     box-shadow: 0 30px 80px rgba(10,14,26,0.12);
   }
-  .s-stat .prompt-card.p2 { opacity: 0.7; transform: translateX(-30px); }
-  .s-stat .prompt-card.p3 { opacity: 0.4; transform: translateX(-60px); }
+  .s-stat .prompt-card.p2 { opacity: 1; }
+  .s-stat .prompt-card.p3 { opacity: 1; }
   .s-stat .prompt-card .chip {
     font-family: 'JetBrains Mono', monospace;
     font-size: 24px;
@@ -308,6 +308,14 @@
   }
   .sol-card .mini code {
     color: var(--blue-bright);
+  }
+  .sol-card .icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: var(--blue-soft);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    flex-shrink: 0;
   }
 
   /* ---------- Slide 05: Demo placeholder ---------- */
@@ -634,10 +642,11 @@
     margin: 0; padding: 0; list-style: none;
     display: flex; flex-direction: column;
     gap: 16px;
-    margin-top: auto;
+    margin-top: 32px;
     border-top: 1px solid var(--line);
     padding-top: 26px;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 600;
     color: var(--ink-dim);
   }
   .price-card.monthly ul { border-top-color: rgba(255,255,255,0.25); color: #E8F0FF; }
@@ -650,7 +659,7 @@
     font-weight: 700;
     font-family: 'JetBrains Mono', monospace;
     font-size: 22px;
-    margin-top: 2px;
+    margin-top: 3px;
   }
 
   /* ---------- Slide 10: Team ---------- */
@@ -693,10 +702,10 @@
   }
   .s-team .origin {
     position: absolute;
-    left: 120px; right: 120px; top: 500px;
+    left: 120px; width: 880px; top: 490px;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
-    font-size: 56px;
+    font-size: 50px;
     color: var(--ink-dim);
     text-align: left;
     line-height: 1.22;
@@ -704,6 +713,30 @@
   }
   .s-team .origin b { color: var(--ink); font-style: normal; font-family: 'Space Grotesk'; font-weight: 600; }
   .s-team .origin em { color: var(--blue-bright); font-style: italic; }
+  .s-team .journey {
+    position: absolute;
+    right: 120px; top: 460px; width: 680px;
+    display: flex; flex-direction: column;
+  }
+  .s-team .journey-node {
+    display: flex; align-items: center; gap: 24px;
+    padding: 24px 28px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+  }
+  .s-team .journey-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--blue-soft);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .s-team .journey-label { font-size: 28px; color: var(--ink-dim); line-height: 1.2; font-family: 'Space Grotesk', sans-serif; font-style: normal; }
+  .s-team .journey-label b { color: var(--ink); font-weight: 600; }
+  .s-team .journey-arrow {
+    width: 2px; height: 28px; background: var(--line-strong);
+    margin-left: 55px;
+  }
 
   /* ---------- Slide 11: Close ---------- */
   .s-close {
@@ -806,24 +839,24 @@
     </div>
     <div class="slide-num">01 / 10</div>
 
-    <div class="prompt-stack" data-reveal="2">
-      <div class="prompt-card p1">
+    <div class="prompt-stack">
+      <div class="prompt-card p1" data-reveal="1">
         <div class="chip">CHATGPT</div>
         <div class="q">HVAC businesses in SF that can fix my AC this weekend?</div>
       </div>
-      <div class="prompt-card p2">
+      <div class="prompt-card p2" data-reveal="2">
         <div class="chip">CHATGPT</div>
         <div class="q">Best pediatric dentist in San Jose for a 4-year-old?</div>
       </div>
-      <div class="prompt-card p3">
+      <div class="prompt-card p3" data-reveal="3">
         <div class="chip">CHATGPT</div>
         <div class="q">Auto body shop near Cupertino open on a Sunday?</div>
       </div>
     </div>
 
       <div class="stat-wrap">
-        <div class="stat-num" data-reveal="1">2.5 B</div>
-      <div class="stat-label" data-reveal="3">prompts answered on AI chatbots <b style="color:var(--ink)">every single day</b> — and your customers are in them.</div>
+        <div class="stat-num">2.5 B</div>
+      <div class="stat-label">AI prompts answered <b style="color:var(--ink)">every single day.</b></div>
     </div>
 
     <div class="wordmark-footer">
@@ -839,19 +872,19 @@
       <div style="display:flex; justify-content:space-between; align-items:flex-start;">
         <div class="eyebrow">The Problem</div>
       </div>
-      <div class="title">If AI doesn't <em>mention</em> your business,<br/>you don't exist to a new customer.</div>
+      <div class="title">No AI mention —<br/>you <em>don't exist</em> to a new customer.</div>
     </div>
     <div class="slide-num">02 / 10</div>
 
     <div class="chat-col">
       <div class="chat-bubble user" data-reveal="1">Best pediatric dentist in San Jose for my 4-year-old?</div>
-      <div class="chat-bubble ai" data-reveal="2">
+      <div class="chat-bubble ai" data-reveal="1">
         I'd recommend <span class="biz">Dr. Kim's Kids Dental</span> and <span class="biz">Sunshine Smiles</span>. Both have strong reviews for young patients.<br/><br/>
         <span class="strike">Big Smiles Dentistry</span> <span style="color: var(--ink-mute);">— not found in results.</span>
       </div>
     </div>
 
-    <div class="cost-card" data-reveal="3">
+    <div class="cost-card" data-reveal="2">
       <div class="amount">$10K</div>
       <div class="desc"><b>Lifetime value</b> of one missed dental patient. Miss a handful a month and it's <b>tens of thousands</b> a year — gone.</div>
     </div>
@@ -873,19 +906,43 @@
 
     <div class="three-col">
       <div class="sol-card" data-reveal="1">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 6C4 4.9 4.9 4 6 4H20C21.1 4 22 4.9 22 6V17C22 18.1 21.1 19 20 19H10L5 24V19H6C4.9 19 4 18.1 4 17V6Z" fill="#1E5FE0"/><circle cx="9" cy="11.5" r="1.5" fill="white"/><circle cx="14" cy="11.5" r="1.5" fill="white"/><circle cx="19" cy="11.5" r="1.5" fill="white"/></svg>
+        </div>
         <div class="num">01 / ANSWER</div>
         <div class="t">Prompts, not keywords.</div>
-        <div class="mini"><code>"best dentist"</code><br/>→ <code>"which clinic treats a 4-year-old who fell off his bike"</code></div>
+        <div class="mini">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="background:var(--bg);border-radius:8px;padding:10px 14px;color:var(--ink-mute);font-size:22px;">"best dentist near me"</div>
+            <div style="color:var(--blue-bright);font-size:20px;padding-left:4px;">→ what AI actually gets asked:</div>
+            <div style="background:var(--blue-soft);border-radius:8px;padding:10px 14px;color:var(--ink);font-size:22px;">"pediatric dentist open Saturday for a nervous 6-year-old"</div>
+          </div>
+        </div>
       </div>
       <div class="sol-card" data-reveal="2">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M17 2H7C5.9 2 5 2.9 5 4V24C5 25.1 5.9 26 7 26H21C22.1 26 23 25.1 23 24V8L17 2Z" fill="#1E5FE0" opacity="0.25"/><path d="M17 2V8H23L17 2Z" fill="#1E5FE0"/><line x1="9" y1="13" x2="19" y2="13" stroke="#1E5FE0" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="17" x2="19" y2="17" stroke="#1E5FE0" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="21" x2="14" y2="21" stroke="#1E5FE0" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
         <div class="num">02 / STRUCTURE</div>
-        <div class="t">Add <span style="color:var(--blue-bright); font-family:'JetBrains Mono',monospace; font-size: 38px;">llms.txt</span>.</div>
-        <div class="mini">The sitemap built for AI crawlers — without it, models guess from messy HTML and skip you.</div>
+        <div class="t">Add <span style="color:var(--blue-bright); font-family:'JetBrains Mono',monospace; font-size: 36px;">llms.txt</span>.</div>
+        <div class="mini">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <span style="font-size:22px;color:var(--ink-mute);">Without it</span>
+            <span style="color:var(--warn);">AI guesses → skips you</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-size:22px;color:var(--ink-mute);">With it</span>
+            <span style="color:var(--blue-bright);">AI cites you by name ✓</span>
+          </div>
+        </div>
       </div>
       <div class="sol-card" data-reveal="3">
+        <div class="icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="10" cy="14" r="7" fill="#1E5FE0" opacity="0.2" stroke="#1E5FE0" stroke-width="1.8"/><circle cx="18" cy="14" r="7" fill="#1E5FE0" opacity="0.2" stroke="#1E5FE0" stroke-width="1.8"/><path d="M14 9.5C15.5 10.8 16 12.3 16 14C16 15.7 15.5 17.2 14 18.5C12.5 17.2 12 15.7 12 14C12 12.3 12.5 10.8 14 9.5Z" fill="#1E5FE0"/></svg>
+        </div>
         <div class="num">03 / CONSISTENCY</div>
         <div class="t">Same story, everywhere.</div>
-        <div class="mini"><code>HOURS ON SITE</code> Mon–Fri 9–5<br/><code>HOURS ON YELP</code> Mon–Fri 10–6<br/><span style="color: var(--warn);">AI sees the conflict → cites a competitor.</span></div>
+        <div class="mini"><code>SITE</code> Mon–Fri 9–5<br/><code>YELP</code> Mon–Fri 10–6<br/><span style="color: var(--warn);">Conflict → AI cites a competitor.</span></div>
       </div>
     </div>
 
@@ -929,7 +986,7 @@
     </div>
     <div class="slide-num">05 / 10</div>
 
-    <div class="left" data-reveal="1">
+    <div class="left">
       <div class="mugshot">
         <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&auto=format&fit=crop&q=80" alt="Mike Thompson, dentist" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/>
       </div>
@@ -963,24 +1020,24 @@
     <div class="slide-num">06 / 10</div>
 
     <div class="grid">
-      <div class="col them" data-reveal="1">
+      <div class="col them">
         <h3>Incumbents</h3>
         <div class="name">Profound · AthenaHQ · Goodie</div>
         <div class="sub">"Enterprise GEO monitoring"</div>
-        <div class="row"><div class="lbl">Built for</div><div class="val">Enterprise teams with in-house developers</div></div>
-        <div class="row"><div class="lbl">What it does</div><div class="val">Tells you the problem. Doesn't fix it.</div></div>
-        <div class="row"><div class="lbl">Time to value</div><div class="val">Weeks of engineering work</div></div>
-        <div class="price">Starting at<span class="big" style="color: var(--ink);">$500<span style="font-size:24px; color: var(--ink-mute); margin-left: 6px;">/mo</span></span></div>
+        <div class="row" data-reveal="1"><div class="lbl">Built for</div><div class="val">Enterprise teams with in-house developers</div></div>
+        <div class="row" data-reveal="2"><div class="lbl">What it does</div><div class="val">Tells you the problem. Doesn't fix it.</div></div>
+        <div class="row" data-reveal="3"><div class="lbl">Time to value</div><div class="val">Weeks of engineering work</div></div>
+        <div class="price" data-reveal="4">Starting at<span class="big" style="color: var(--ink);">$500<span style="font-size:24px; color: var(--ink-mute); margin-left: 6px;">/mo</span></span></div>
       </div>
 
-      <div class="col us" data-reveal="2">
+      <div class="col us">
         <h3>Gleo</h3>
         <div class="name">gleo<span style="color:var(--blue-bright)">.</span></div>
         <div class="sub">"AI influence for small businesses"</div>
-        <div class="row"><div class="lbl">Built for</div><div class="val">Every small business — <b>no dev team required</b></div></div>
-        <div class="row"><div class="lbl">What it does</div><div class="val"><b>Applies changes automatically</b>, in 60 seconds</div></div>
-        <div class="row"><div class="lbl">Time to value</div><div class="val"><b>One minute</b>, live in WordPress</div></div>
-        <div class="price">Starting at<span class="big">$49<span class="mo">/mo</span></span></div>
+        <div class="row" data-reveal="1"><div class="lbl">Built for</div><div class="val">Every small business — <b>no dev team required</b></div></div>
+        <div class="row" data-reveal="2"><div class="lbl">What it does</div><div class="val"><b>Applies changes automatically</b>, in 60 seconds</div></div>
+        <div class="row" data-reveal="3"><div class="lbl">Time to value</div><div class="val"><b>One minute</b>, live in WordPress</div></div>
+        <div class="price" data-reveal="4">Starting at<span class="big">$49<span class="mo">/mo</span></span></div>
       </div>
     </div>
 
@@ -1099,10 +1156,33 @@
 
     <div class="origin" data-reveal="2">
       We met through <b>speech &amp; debate</b> at Bellarmine —<br/>
-      four years of <em>arguing, losing, adapting, winning.</em><br/><br/>
-      We built <b>websites</b> for small businesses.<br/>
-      Learned fast: websites don't bring customers — <em>AI does.</em><br/><br/>
-      So we <b>pivoted to Gleo.</b>
+      trained to think fast and change direction.<br/><br/>
+      We built websites for small businesses,<br/>
+      then realized <em>websites don't bring customers anymore.</em><br/><br/>
+      <b>AI does.</b> So we built Gleo.
+    </div>
+
+    <div class="journey" data-reveal="2">
+      <div class="journey-node">
+        <div class="journey-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5V15C21 16.1 20.1 17 19 17H9L4 22V17H5C3.9 17 3 16.1 3 15V5Z" fill="#1E5FE0"/><circle cx="8.5" cy="10" r="1.3" fill="white"/><circle cx="13" cy="10" r="1.3" fill="white"/><circle cx="17.5" cy="10" r="1.3" fill="white"/></svg>
+        </div>
+        <div class="journey-label"><b>Speech &amp; Debate</b><br/>Bellarmine College Preparatory</div>
+      </div>
+      <div class="journey-arrow"></div>
+      <div class="journey-node">
+        <div class="journey-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="4" width="20" height="14" rx="3" fill="#1E5FE0" opacity="0.25" stroke="#1E5FE0" stroke-width="1.6"/><line x1="8" y1="22" x2="18" y2="22" stroke="#1E5FE0" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="18" x2="13" y2="22" stroke="#1E5FE0" stroke-width="2"/></svg>
+        </div>
+        <div class="journey-label"><b>Built 12+ SMB Websites</b><br/>Saw AI eating their traffic</div>
+      </div>
+      <div class="journey-arrow"></div>
+      <div class="journey-node">
+        <div class="journey-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" fill="#1E5FE0" opacity="0.15" stroke="#1E5FE0" stroke-width="1.6"/><path d="M9 13l3 3 5-5" stroke="#1E5FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="journey-label"><b>Founded Gleo</b><br/>2025 · Santa Clara University</div>
+      </div>
     </div>
 
     <div class="wordmark-footer">
@@ -1120,7 +1200,21 @@
       <div class="sub">The New SEO for the AI Era</div>
       <div class="big-logo">gleo<span class="dot">.</span></div>
       <div class="tagline">Be the <em>answer</em> AI gives to your customers.</div>
-      <div class="sub" style="margin-top: 40px;">Krish · Varun · Bhavish Jagani &nbsp;·&nbsp; Bellarmine &nbsp;·&nbsp; 2026</div>
+      <div style="display:flex; gap:32px; margin-top:16px;">
+        <div style="background:var(--bg-2); border:1px solid var(--line); border-radius:16px; padding:20px 32px; text-align:center;">
+          <div style="font-size:40px; font-weight:700; letter-spacing:-0.03em; color:var(--ink);">2.5B</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:var(--ink-mute); letter-spacing:0.08em; text-transform:uppercase; margin-top:4px;">prompts / day</div>
+        </div>
+        <div style="background:var(--bg-2); border:1px solid var(--line); border-radius:16px; padding:20px 32px; text-align:center;">
+          <div style="font-size:40px; font-weight:700; letter-spacing:-0.03em; color:var(--blue-bright);">60 sec</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:var(--ink-mute); letter-spacing:0.08em; text-transform:uppercase; margin-top:4px;">to being cited</div>
+        </div>
+        <div style="background:var(--bg-2); border:1px solid var(--line); border-radius:16px; padding:20px 32px; text-align:center;">
+          <div style="font-size:40px; font-weight:700; letter-spacing:-0.03em; color:var(--ink);">$49</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:var(--ink-mute); letter-spacing:0.08em; text-transform:uppercase; margin-top:4px;">/ month</div>
+        </div>
+      </div>
+      <div class="sub" style="margin-top: 24px;">Krish · Varun · Bhavish &nbsp;·&nbsp; Bellarmine &nbsp;·&nbsp; 2026</div>
     </div>
   </section>
 
