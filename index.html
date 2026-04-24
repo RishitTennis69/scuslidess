@@ -22,25 +22,26 @@
     --warn: #E8563A;
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: #E3DFD2; font-family: 'Space Grotesk', sans-serif; }
+  html, body { margin: 0; padding: 0; background: #E3DFD2; font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   section {
     background: var(--bg);
     color: var(--ink);
     font-family: 'Space Grotesk', sans-serif;
     overflow: hidden;
+    position: relative;
   }
 
   /* ---------- Shared slide chrome ---------- */
   .slide-pad {
     position: absolute; inset: 0;
-    padding: 100px 120px 80px 120px;
+    padding: 88px 120px 80px 120px;
     display: flex; flex-direction: column;
   }
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 500;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--blue-bright);
   }
@@ -48,7 +49,7 @@
     position: absolute;
     top: 56px; right: 120px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
+    font-size: 21px;
     color: var(--ink-mute);
     letter-spacing: 0.1em;
   }
@@ -58,12 +59,38 @@
     display: flex; align-items: center; gap: 14px;
     color: var(--ink-mute);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
+    font-size: 21px;
     letter-spacing: 0.06em;
   }
-  .wordmark-footer .wm { color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.01em; }
+  .wordmark-footer .wm { color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -0.01em; }
   .wordmark-footer .wm b { color: var(--blue-bright); }
   .wordmark-footer .sep { width: 1px; height: 18px; background: var(--line-strong); }
+
+  /* ---------- Global deck polish ---------- */
+  .sol-card,
+  .s-score .card,
+  .s-demo .demo-shell,
+  .price-card,
+  .s-gtm .wl-panel,
+  .s-gtm .hub-shell,
+  .s-team .journey-node,
+  .s-comp .col,
+  .s-proof .proof-side,
+  .s-persona .mugshot {
+    box-shadow: 0 12px 34px rgba(10,14,26,0.10);
+  }
+  .s-score .card,
+  .s-demo .demo-shell,
+  .s-proof .proof-side,
+  .s-team .journey-node,
+  .s-comp .col.them {
+    border-color: rgba(10,14,26,0.14);
+  }
+  .s-stat .prompt-card,
+  .chat-bubble,
+  .s-gtm .node:not(.center) {
+    box-shadow: 0 8px 24px rgba(10,14,26,0.08);
+  }
 
   /* ---------- Wordmark ---------- */
   .gleo-logo {
@@ -184,7 +211,7 @@
   /* ---------- Slide 03: Problem ---------- */
   .s-problem { background: var(--bg); }
   .s-problem .title {
-    font-size: 72px; font-weight: 600;
+    font-size: 74px; font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.05;
     max-width: 900px;
@@ -254,7 +281,7 @@
 
   /* ---------- Slide 04: Solution ---------- */
   .s-solution .h1 {
-    font-size: 80px; font-weight: 600;
+    font-size: 74px; font-weight: 600;
     letter-spacing: -0.03em; line-height: 1.05;
     margin-top: 20px;
     max-width: 1300px;
@@ -665,7 +692,7 @@
   .s-comp .col.us .price .big .mo { color: #CFE0FF; font-size: 24px; font-weight: 500; margin-left: 6px; }
 
   /* ---------- Slide 09: Scorecard ---------- */
-  .s-score .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-score .h1 { font-size: 74px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
   .s-score .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
   .s-score .card {
     position: absolute;
@@ -705,7 +732,7 @@
   .s-score .us { color: var(--blue-bright); font-weight: 600; }
 
   /* ---------- Slide 10: GTM ---------- */
-  .s-gtm .h1 { font-size: 80px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-gtm .h1 { font-size: 74px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
   .s-gtm .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
   .s-gtm .hub-wrap {
     position: absolute;
@@ -866,7 +893,7 @@
     box-sizing: border-box;
   }
   .s-gtm .wl-panel ul li {
-    font-size: 24px;
+    font-size: 26px;
     line-height: 1.3;
     color: var(--ink-dim);
     position: relative;
@@ -884,6 +911,12 @@
     background: var(--blue-bright);
   }
   .s-gtm .wl-panel ul li b { color: var(--ink); font-weight: 600; }
+  .s-gtm .wl-panel ul.numbered li {
+    padding-left: 0;
+  }
+  .s-gtm .wl-panel ul.numbered li::before {
+    display: none;
+  }
   /* GTM: step-reveal each bullet (display:none until step); own motion vs global [data-reveal] */
   .s-gtm .wl-panel ul li[data-reveal] {
     transition: none;
@@ -907,7 +940,7 @@
   }
 
   /* ---------- Slide 10: Pricing ---------- */
-  .s-pricing .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-pricing .h1 { font-size: 74px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
   .s-pricing .two {
     position: absolute;
     left: 120px; right: 120px; bottom: 140px; top: 300px;
@@ -981,7 +1014,7 @@
   }
 
   /* ---------- Slide 11: Team ---------- */
-  .s-team .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-team .h1 { font-size: 74px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
   .s-team .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
   .s-team .members {
     position: absolute;
@@ -1098,9 +1131,9 @@
   /* ---------- Step-reveal animations ---------- */
   [data-reveal] {
     opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(14px);
+    transition: opacity 0.44s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.44s cubic-bezier(0.22, 1, 0.36, 1);
     pointer-events: none;
   }
   [data-reveal].revealed {
@@ -1409,11 +1442,11 @@
 
     <div class="hub-wrap">
       <div class="wl-panel">
-        <div class="statline" data-reveal="1"><em>50+</em> clients from <em>one</em> partnership.</div>
-        <ul>
-          <li data-reveal="2">Sell Gleo to <b>digital marketing agencies</b> that run <b>Google Ads and SEO</b> for SMBs.</li>
-          <li data-reveal="3">They usually have <b>20–100 clients</b> each — and need an <b>AI solution</b> they can offer those accounts.</li>
-          <li data-reveal="4">They <b>offer Gleo</b> to their clients — under their brand, we run the engine.</li>
+        <div class="statline"><em>50+</em> clients from <em>one</em> partnership.</div>
+        <ul class="numbered">
+          <li data-reveal="2"><b>1.</b> Sell Gleo to <b>digital marketing agencies</b> that serve SMBs.</li>
+          <li data-reveal="3"><b>2.</b> Most manage <b>20-100 clients</b> and desperately need an <b>AI solution</b>.</li>
+          <li data-reveal="4"><b>3.</b> They can then <b>offer Gleo</b> to their clients.</li>
         </ul>
       </div>
       <div class="hub-shell" data-reveal="5">
