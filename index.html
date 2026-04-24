@@ -144,8 +144,7 @@
     display: flex; flex-direction: column; gap: 10px;
     box-shadow: 0 30px 80px rgba(10,14,26,0.12);
   }
-  .s-stat .prompt-card.p2 { opacity: 1; }
-  .s-stat .prompt-card.p3 { opacity: 1; }
+
   .s-stat .prompt-card .chip {
     font-family: 'JetBrains Mono', monospace;
     font-size: 24px;
@@ -153,7 +152,7 @@
     letter-spacing: 0.08em;
   }
   .s-stat .prompt-card .q {
-    font-size: 24px;
+    font-size: 26px;
     color: var(--ink);
     line-height: 1.3;
   }
@@ -165,8 +164,9 @@
   .s-stat .stat-num {
     font-size: 380px;
     font-weight: 700;
-    letter-spacing: -0.07em;
-    line-height: 0.85;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    padding-right: 0.04em;
     color: var(--ink);
     background: linear-gradient(180deg, #0F1524 0%, #2E7BFF 100%);
     -webkit-background-clip: text;
@@ -318,7 +318,144 @@
     flex-shrink: 0;
   }
 
-  /* ---------- Slide 05: Demo placeholder ---------- */
+  /* ---------- Slide 05: Proof ---------- */
+  .s-proof { background: var(--bg); }
+  .s-proof .proof-wrap {
+    position: absolute;
+    left: 100px; right: 100px; top: 230px; bottom: 120px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 32px;
+  }
+  .s-proof .proof-main {
+    background: transparent;
+    border: 0;
+    border-left: 4px solid rgba(46,123,255,0.35);
+    border-radius: 0;
+    padding: 54px 58px;
+    display: flex; flex-direction: column; justify-content: center; gap: 26px;
+  }
+  .s-proof .proof-kicker {
+    font-size: 38px;
+    color: var(--ink-dim);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .s-proof .proof-kicker b {
+    font-size: 106px;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    display: block;
+  }
+  .s-proof .proof-big {
+    font-size: 220px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.88;
+    color: var(--ink);
+    background: linear-gradient(180deg, #0F1524 0%, #2E7BFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .s-proof .proof-sub {
+    font-size: 56px;
+    color: var(--ink-dim);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .s-proof .proof-sub b {
+    font-size: 164px;
+    color: var(--blue-bright);
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    vertical-align: baseline;
+  }
+  .s-proof .proof-side {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 36px 38px;
+    display: flex; flex-direction: column; gap: 18px; justify-content: center;
+  }
+  .s-proof .mini-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+  .s-proof .snapshot-title {
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .s-proof .snapshot-title b { color: var(--blue-bright); }
+  .s-proof .snapshot-card {
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: 18px;
+    padding: 18px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .s-proof .snapshot-row {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 23px; color: var(--ink-dim); line-height: 1.3;
+  }
+  .s-proof .snapshot-row .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--blue-bright); margin-top: 10px; flex-shrink: 0;
+  }
+  .s-proof .snapshot-title {
+    margin-bottom: 4px;
+  }
+  .s-proof .proof-wrap.single {
+    grid-template-columns: 1fr;
+  }
+  .s-proof .proof-main.hero-only {
+    align-items: flex-start;
+  }
+  .s-proof .tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .s-proof .tech-chip {
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-size: 24px;
+    color: var(--ink-dim);
+  }
+  .s-proof .formula {
+    margin-top: 12px;
+    font-size: 34px;
+    line-height: 1.25;
+    color: var(--ink-dim);
+    letter-spacing: -0.01em;
+  }
+  .s-proof .formula b { color: var(--ink); }
+  .s-proof .source-stamp {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Slide 06: Demo placeholder ---------- */
   .s-demo { background: var(--bg); }
   .s-demo .demo-shell {
     position: absolute;
@@ -367,7 +504,7 @@
   }
   .s-demo .hint b { color: var(--ink); }
 
-  /* ---------- Slide 06: Persona ---------- */
+  /* ---------- Slide 07: Persona ---------- */
   .s-persona { background: var(--bg); }
   .s-persona .left {
     position: absolute;
@@ -425,24 +562,24 @@
     display: flex; flex-direction: column; gap: 0;
   }
   .s-persona .pain {
-    display: grid; grid-template-columns: 100px 1fr;
+    display: grid; grid-template-columns: 140px 1fr;
     align-items: center;
-    gap: 20px;
-    padding: 14px 0;
+    gap: 40px;
+    padding: 16px 0;
     border-top: 1px solid var(--line);
-    font-size: 24px;
+    font-size: 30px;
     color: var(--ink-dim);
   }
   .s-persona .pain:last-child { border-bottom: 1px solid var(--line); }
   .s-persona .pain .k {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
+    font-size: 27px;
     color: var(--blue-bright);
     letter-spacing: 0.1em;
   }
   .s-persona .pain b { color: var(--ink); font-weight: 600; }
 
-  /* ---------- Slide 07: Competitive landscape ---------- */
+  /* ---------- Slide 08: Competitive landscape ---------- */
   .s-comp .title { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
   .s-comp .grid {
     position: absolute;
@@ -453,9 +590,9 @@
   }
   .s-comp .col {
     border-radius: 24px;
-    padding: 40px 40px 44px;
+    padding: 34px 34px 38px;
     display: flex; flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
   .s-comp .col.them {
     background: #FFFFFF;
@@ -479,33 +616,33 @@
   .s-comp .col.them h3 { color: var(--ink-mute); }
   .s-comp .col.us h3 { color: #CFE0FF; }
   .s-comp .col .name {
-    font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
+    font-size: 48px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
   }
   .s-comp .col.them .name { color: var(--ink-dim); }
   .s-comp .col .sub {
     font-family: 'Instrument Serif', serif; font-style: italic;
-    font-size: 28px;
+    font-size: 27px;
     color: inherit;
     opacity: 0.7;
     margin-top: -14px;
   }
   .s-comp .row {
     display: flex; flex-direction: column;
-    gap: 8px;
-    padding-top: 22px;
+    gap: 6px;
+    padding-top: 14px;
     border-top: 1px solid var(--line);
   }
   .s-comp .col.us .row { border-top-color: rgba(255,255,255,0.25); }
   .s-comp .row .lbl {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: inherit;
     opacity: 0.55;
   }
   .s-comp .row .val {
-    font-size: 28px;
+    font-size: 27px;
     line-height: 1.25;
     color: inherit;
   }
@@ -516,79 +653,260 @@
   .s-comp .col.us .price { color: rgba(255,255,255,0.7); }
   .s-comp .price {
     margin-top: auto;
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'JetBrains Mono', monospace;
     letter-spacing: 0.02em;
     color: inherit;
     opacity: 0.8;
   }
-  .s-comp .price .big { font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; display: block; margin-top: 4px; }
+  .s-comp .price .big { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700; letter-spacing: -0.02em; display: block; margin-top: 2px; }
   .s-comp .col.them .price .big { color: var(--ink-dim); }
   .s-comp .col.us .price .big { color: #FFFFFF; }
   .s-comp .col.us .price .big .mo { color: #CFE0FF; font-size: 24px; font-weight: 500; margin-left: 6px; }
 
-  /* ---------- Slide 08: GTM ---------- */
-  .s-gtm .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
-  .s-gtm .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
-  .s-gtm .two-col {
+  /* ---------- Slide 09: Scorecard ---------- */
+  .s-score .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-score .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
+  .s-score .card {
     position: absolute;
-    left: 120px; right: 120px; bottom: 140px; top: 280px;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-  .gtm-card {
+    left: 120px; right: 120px; top: 300px; bottom: 240px;
     background: var(--bg-2);
     border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 40px 40px 44px;
-    display: flex; flex-direction: column;
-    gap: 24px;
-    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
   }
-  .gtm-card .tag {
+  .s-score .header,
+  .s-score .row {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    align-items: center;
+  }
+  .s-score .header {
+    padding: 20px 28px;
+    background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%);
+    border-bottom: 1px solid var(--line);
     font-family: 'JetBrains Mono', monospace;
     font-size: 24px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--blue-bright);
+    color: rgba(255,255,255,0.82);
   }
-  .gtm-card .t {
-    font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
-  }
-  .gtm-card .flow {
-    display: flex; align-items: center; gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-  .gtm-card .flow .node {
-    background: var(--bg);
-    border: 1px solid var(--line-strong);
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 24px;
-    color: var(--ink);
-  }
-  .gtm-card .flow .arr {
-    color: var(--blue-bright);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 24px;
-  }
-  .gtm-card .result {
-    margin-top: auto;
-    padding-top: 26px;
-    border-top: 1px solid var(--line);
-    font-size: 28px;
+  .s-score .header .h-main { font-size: 32px; color: #FFFFFF; font-weight: 700; letter-spacing: 0.02em; }
+  .s-score .header .h-sub { font-size: 17px; color: #CFE0FF; letter-spacing: 0.05em; margin-top: 4px; }
+  .s-score .row {
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--line);
+    font-size: 30px;
     color: var(--ink-dim);
   }
-  .gtm-card .result b { color: var(--blue-bright); font-weight: 600; }
-  .gtm-card .big-num {
-    font-size: 110px; font-weight: 700;
-    letter-spacing: -0.04em; line-height: 1;
+  .s-score .row:last-child { border-bottom: 0; }
+  .s-score .metric { font-weight: 600; color: var(--ink); }
+  .s-score .them { color: var(--ink-dim); }
+  .s-score .us { color: var(--blue-bright); font-weight: 600; }
+
+  /* ---------- Slide 10: GTM ---------- */
+  .s-gtm .h1 { font-size: 80px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
+  .s-gtm .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
+  .s-gtm .hub-wrap {
+    position: absolute;
+    left: 120px; right: 120px; bottom: 140px; top: 280px;
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+  .s-gtm .hub-shell {
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: 28px;
+    position: relative;
+    padding: 26px;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .s-gtm .hub-link-wrap {
+    position: absolute;
+    inset: 26px;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .s-gtm .hub-link-wrap svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .s-gtm .hub-grid {
+    position: absolute; inset: 26px;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 18px;
+    background: transparent;
+  }
+  .s-gtm .node {
+    background: rgba(246,244,237,0.92);
+    border: 1px solid var(--line-strong);
+    border-radius: 16px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .s-gtm .node:not(.center) {
+    max-width: 88%;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--bg);
+    box-shadow: 0 1px 0 rgba(10,14,26,0.06);
+  }
+  .s-gtm .node.center {
+    background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%);
+    border-color: var(--blue);
+    color: #FFFFFF;
+    box-shadow: 0 24px 80px rgba(46,123,255,0.35);
+    z-index: 3;
+    transform: scale(1.12);
+  }
+  .s-gtm .node .k {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .s-gtm .node.center .k { color: #CFE0FF; }
+  .s-gtm .node .t {
+    margin-top: 6px;
+    font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1;
     color: var(--ink);
   }
-  .gtm-card .big-num .plus { color: var(--blue-bright); }
+  .s-gtm .node.center .t {
+    color: #FFFFFF;
+    font-size: 36px;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+    margin-top: 0;
+    max-width: 92%;
+  }
+  .s-gtm .node .d {
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--ink-dim);
+    line-height: 1.25;
+  }
+  .s-gtm .node:not(.center) .k {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+  .s-gtm .node:not(.center) .t {
+    margin-top: 0;
+    font-size: 21px;
+    line-height: 1.18;
+    max-width: 100%;
+  }
+  .s-gtm .node:not(.center) .d {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  .s-gtm .node:not(.center) .k,
+  .s-gtm .node:not(.center) .t,
+  .s-gtm .node:not(.center) .d {
+    position: relative;
+    z-index: 1;
+  }
+  .s-gtm .wl-panel {
+    border: 1px solid var(--line-strong);
+    border-radius: 24px;
+    padding: 28px 30px 28px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(246,244,237,0.55);
+    min-height: 0;
+  }
+  .s-gtm .wl-panel .statline {
+    width: 100%;
+    margin: 0 0 36px 0;
+    padding: 0 2px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  .s-gtm .wl-panel .statline em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--blue-bright);
+  }
+  .s-gtm .wl-panel ul {
+    margin: 0;
+    padding: 0 0 0 1.15em;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .s-gtm .wl-panel ul li {
+    font-size: 24px;
+    line-height: 1.3;
+    color: var(--ink-dim);
+    position: relative;
+    padding-left: 0.45em;
+    padding-right: 4px;
+  }
+  .s-gtm .wl-panel ul li::before {
+    content: '';
+    position: absolute;
+    left: -0.95em;
+    top: 0.62em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue-bright);
+  }
+  .s-gtm .wl-panel ul li b { color: var(--ink); font-weight: 600; }
+  /* GTM: step-reveal each bullet (display:none until step); own motion vs global [data-reveal] */
+  .s-gtm .wl-panel ul li[data-reveal] {
+    transition: none;
+  }
+  .s-gtm .wl-panel ul li[data-reveal]:not(.revealed) {
+    display: none;
+  }
+  .s-gtm .wl-panel ul li[data-reveal].revealed {
+    display: list-item;
+    animation: s-gtm-li-in 0.52s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes s-gtm-li-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-  /* ---------- Slide 09: Pricing ---------- */
+  /* ---------- Slide 10: Pricing ---------- */
   .s-pricing .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
   .s-pricing .two {
     position: absolute;
@@ -662,7 +980,7 @@
     margin-top: 3px;
   }
 
-  /* ---------- Slide 10: Team ---------- */
+  /* ---------- Slide 11: Team ---------- */
   .s-team .h1 { font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px; }
   .s-team .h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--blue-bright); }
   .s-team .members {
@@ -737,8 +1055,11 @@
     width: 2px; height: 28px; background: var(--line-strong);
     margin-left: 55px;
   }
+  .s-team .wordmark-footer {
+    display: none;
+  }
 
-  /* ---------- Slide 11: Close ---------- */
+  /* ---------- Slide 12: Close ---------- */
   .s-close {
     background:
       radial-gradient(1200px 800px at 50% 120%, rgba(46,123,255,0.18), transparent 60%),
@@ -787,6 +1108,18 @@
     transform: translateY(0);
     pointer-events: auto;
   }
+
+  @media print {
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto !important;
+    }
+    .s-gtm .wl-panel ul li[data-reveal] {
+      display: list-item !important;
+      animation: none !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -800,9 +1133,9 @@
   "Quick demo. Gleo runs inside WordPress — and roughly half of small business sites run on WordPress, which is why we can actually make the changes live, not just tell you what's broken. You paste in your site, Gleo audits it, applies the fixes in about sixty seconds, and then you track your AI share-of-voice over time in the dashboard. I'll walk through a real example now.",
   "This is Mike. Mike owns Big Smiles Dentistry in San Jose — six hundred thousand in ARR. He's the person we built Gleo for. He's been paying thousands of dollars a month on traditional SEO and watching the returns drop off a cliff — fewer leads, higher cost per click, and more of his search traffic now siphoned off by AI answers. He knows ChatGPT is recommending his competitors. He wants in — but he is not going to hire a developer to write schema markup. That's our customer, and there are thirty-six million of them in the US.",
   "So where do we sit? The GEO monitoring companies — Profound, AthenaHQ, Goodie — they charge five hundred bucks a month to tell enterprise teams what's wrong. They don't fix it, and they're not built for a guy like Mike. Gleo is the opposite of that. We apply the changes automatically, in sixty seconds, for forty-nine dollars a month. Enterprise tools tell you the problem. Gleo fixes it.",
-  "On distribution — we run two loops. First, content-led. We post before-and-after reels on TikTok and Instagram showing a real SMB site going from invisible to cited. One video gets us roughly a hundred signups. Second, partnerships. We white-label Gleo to digital marketing agencies — they bundle it with their existing SEO packages, resell it to their book of small business clients, and we get distribution we don't have to build ourselves. One agency partnership can be worth hundreds of customers.",
+  "Fifty-plus clients have already come through one agency relationship for us. We sell Gleo to digital marketing agencies — the shops running Google Ads and SEO for SMBs. Those agencies often have twenty to a hundred clients and they're getting pressure to offer something credible on AI visibility — that's the gap we fill. They turn around and offer Gleo to their clients under their own brand while we run the product.",
   "Here's how we charge. One-time kickoff fee: a hundred and forty-nine dollars for the initial optimization — the llms-dot-txt, the schema, the answer capsules. Then forty-nine a month for ongoing optimization and the tracking dashboard. Low friction to start, and it compounds from there.",
-  "Three of us. Krish, Varun, and Bhavish. But the real story is how we got here. We met through speech and debate at Bellarmine — four years of arguing, losing, adapting, and winning. Earlier this year we started building websites for small businesses, and we learned fast that websites don't bring customers anymore — AI does. So we pivoted to Gleo. Debate taught us to listen to feedback and change direction fast. That's exactly what building a startup looks like.",
+  "Three of us. Krish, Varun, and Bhavish. But the real story is how we got here. We met through speech and debate at Bellarmine — four years of arguing, losing, adapting, and winning. Earlier this year we started building websites for small businesses, and we learned fast that websites don't bring customers anymore — AI does. So we pivoted to Gleo. Debate taught us to listen to feedback and pivot fast. That's exactly what building a startup looks like.",
   "Two and a half billion prompts happen every day. Small businesses are getting left out of all of them. Gleo puts them back in the conversation — in sixty seconds, for forty-nine bucks a month. Be the answer AI gives to your customers. Thanks."
 ]
 </script>
@@ -837,7 +1170,7 @@
         <div class="eyebrow">The Shift</div>
       </div>
     </div>
-    <div class="slide-num">01 / 10</div>
+    <div class="slide-num">01 / 11</div>
 
     <div class="prompt-stack">
       <div class="prompt-card p1" data-reveal="1">
@@ -861,8 +1194,6 @@
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>Source: OpenAI usage reports, 2025</span>
     </div>
   </section>
 
@@ -874,25 +1205,23 @@
       </div>
       <div class="title">No AI mention —<br/>you <em>don't exist</em> to a new customer.</div>
     </div>
-    <div class="slide-num">02 / 10</div>
+    <div class="slide-num">02 / 11</div>
 
     <div class="chat-col">
-      <div class="chat-bubble user" data-reveal="1">Best pediatric dentist in San Jose for my 4-year-old?</div>
-      <div class="chat-bubble ai" data-reveal="1">
+      <div class="chat-bubble user">Best pediatric dentist in San Jose for my 4-year-old?</div>
+      <div class="chat-bubble ai">
         I'd recommend <span class="biz">Dr. Kim's Kids Dental</span> and <span class="biz">Sunshine Smiles</span>. Both have strong reviews for young patients.<br/><br/>
         <span class="strike">Big Smiles Dentistry</span> <span style="color: var(--ink-mute);">— not found in results.</span>
       </div>
     </div>
 
-    <div class="cost-card" data-reveal="2">
+    <div class="cost-card">
       <div class="amount">$10K</div>
-      <div class="desc"><b>Lifetime value</b> of one missed dental patient. Miss a handful a month and it's <b>tens of thousands</b> a year — gone.</div>
+      <div class="desc"><b>Lifetime value</b> of one missed dental patient.</div>
     </div>
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>The silent churn in AI search</span>
     </div>
   </section>
 
@@ -902,7 +1231,7 @@
       <div class="eyebrow">The Solution</div>
       <div class="h1">Three edits. Sixty seconds.<br/>AI starts <em>mentioning</em> you.</div>
     </div>
-    <div class="slide-num">03 / 10</div>
+    <div class="slide-num">03 / 11</div>
 
     <div class="three-col">
       <div class="sol-card" data-reveal="1">
@@ -924,42 +1253,59 @@
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M17 2H7C5.9 2 5 2.9 5 4V24C5 25.1 5.9 26 7 26H21C22.1 26 23 25.1 23 24V8L17 2Z" fill="#1E5FE0" opacity="0.25"/><path d="M17 2V8H23L17 2Z" fill="#1E5FE0"/><line x1="9" y1="13" x2="19" y2="13" stroke="#1E5FE0" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="17" x2="19" y2="17" stroke="#1E5FE0" stroke-width="1.8" stroke-linecap="round"/><line x1="9" y1="21" x2="14" y2="21" stroke="#1E5FE0" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
         <div class="num">02 / STRUCTURE</div>
-        <div class="t">Add <span style="color:var(--blue-bright); font-family:'JetBrains Mono',monospace; font-size: 36px;">llms.txt</span>.</div>
-        <div class="mini">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-            <span style="font-size:22px;color:var(--ink-mute);">Without it</span>
-            <span style="color:var(--warn);">AI guesses → skips you</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="font-size:22px;color:var(--ink-mute);">With it</span>
-            <span style="color:var(--blue-bright);">AI cites you by name ✓</span>
+        <div class="t"><span style="color:var(--blue-bright); font-family:'JetBrains Mono',monospace; font-size: 36px;">llms.txt</span> is your AI-ready menu.</div>
+        <div class="mini" style="font-size:22px; line-height:1.45; display:flex; flex-direction:column; gap:12px;">
+          <div style="color:var(--ink);">Strips clutter and gives bots instant, reliable business facts.</div>
+          <div style="background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-family:'JetBrains Mono', monospace; font-size:18px; color:var(--ink-dim);">
+            llms.txt<br/>
+            services: pediatric dentistry<br/>
+            hours: mon-sat<br/>
+            phone: (408) 555-0192
           </div>
         </div>
       </div>
       <div class="sol-card" data-reveal="3">
         <div class="icon">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="10" cy="14" r="7" fill="#1E5FE0" opacity="0.2" stroke="#1E5FE0" stroke-width="1.8"/><circle cx="18" cy="14" r="7" fill="#1E5FE0" opacity="0.2" stroke="#1E5FE0" stroke-width="1.8"/><path d="M14 9.5C15.5 10.8 16 12.3 16 14C16 15.7 15.5 17.2 14 18.5C12.5 17.2 12 15.7 12 14C12 12.3 12.5 10.8 14 9.5Z" fill="#1E5FE0"/></svg>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L25 8.5V14C25 19.5 20.2 24.5 14 26C7.8 24.5 3 19.5 3 14V8.5L14 3Z" fill="#1E5FE0" opacity="0.2" stroke="#1E5FE0" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 14l3 3 6-6" stroke="#1E5FE0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="num">03 / CONSISTENCY</div>
         <div class="t">Same story, everywhere.</div>
-        <div class="mini"><code>SITE</code> Mon–Fri 9–5<br/><code>YELP</code> Mon–Fri 10–6<br/><span style="color: var(--warn);">Conflict → AI cites a competitor.</span></div>
+        <div class="mini" style="font-size:26px;"><code>SITE</code> Mon–Fri 9–5<br/><code>YELP</code> Mon–Fri 10–6<br/><span style="color: var(--warn);">Conflict → AI cites a competitor.</span></div>
       </div>
     </div>
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>Live inside WordPress · ~45% of the SMB web</span>
     </div>
   </section>
 
-  <!-- 05 Demo -->
+  <!-- 05 Proof -->
+  <section class="s-proof" data-label="Proof">
+    <div class="slide-pad">
+      <div class="eyebrow">Proof</div>
+    </div>
+    <div class="slide-num">04 / 11</div>
+    <div class="proof-wrap single">
+      <div class="proof-main hero-only">
+        <div class="proof-kicker"><b>UC Berkeley</b>reports</div>
+        <div class="proof-sub">AI mentions increase by <b>42%</b></div>
+        <div class="tech-chips">
+          <span class="tech-chip">Prompt-targeted content</span>
+          <span class="tech-chip"><code style="font-family:'JetBrains Mono',monospace; color:var(--blue-bright)">llms.txt</code> structure</span>
+          <span class="tech-chip">Cross-platform consistency</span>
+        </div>
+      </div>
+    </div>
+    <div class="wordmark-footer"><span class="wm">gleo<b>.</b></span></div>
+  </section>
+
+  <!-- 06 Demo -->
   <section class="s-demo" data-label="Live Demo">
     <div class="slide-pad">
       <div class="eyebrow">Demo</div>
       <div style="font-size: 72px; font-weight: 600; letter-spacing: -0.03em; margin-top: 16px;">See it work in 60 seconds.</div>
     </div>
-    <div class="slide-num">04 / 10</div>
+    <div class="slide-num">05 / 11</div>
 
     <div class="demo-shell">
       <div class="demo-chrome">
@@ -974,17 +1320,15 @@
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>See it work in 60 seconds</span>
     </div>
   </section>
 
-  <!-- 06 Persona -->
+  <!-- 07 Persona -->
   <section class="s-persona" data-label="Target Customer — Mike">
     <div class="slide-pad">
       <div class="eyebrow">Target Customer</div>
     </div>
-    <div class="slide-num">05 / 10</div>
+    <div class="slide-num">06 / 11</div>
 
     <div class="left">
       <div class="mugshot">
@@ -995,111 +1339,125 @@
     </div>
 
     <div class="right">
-      <div class="quote" data-reveal="2">I keep paying for SEO, but ChatGPT recommends my competitors — not me.</div>
+      <div class="quote">I keep paying for SEO, but ChatGPT recommends my competitors — not me.</div>
       <div class="pain-list">
-        <div class="pain" data-reveal="3"><div class="k">REVENUE</div><div><b>$600K ARR</b> · one new patient = <b>$10K</b> lifetime value</div></div>
-        <div class="pain" data-reveal="4"><div class="k">SPEND</div><div>Thousands/mo on <b>traditional SEO</b> — fewer leads, AI siphoning traffic</div></div>
-        <div class="pain" data-reveal="5"><div class="k">SKILL</div><div><b>Not a developer.</b> Won't touch schema or code</div></div>
-        <div class="pain" data-reveal="6"><div class="k">MARKET</div><div><b>36M</b> small businesses like Mike in the U.S.</div></div>
+        <div class="pain" data-reveal="3"><div class="k">REVENUE</div><div style="padding-top:6px;"><b>$600K ARR</b></div></div>
+        <div class="pain" data-reveal="4"><div class="k">SPEND</div><div>Thousands/mo on <b>traditional SEO</b> — declining results, AI siphoning traffic</div></div>
+        <div class="pain" data-reveal="5"><div class="k">SKILL</div><div><b>Low technical skill.</b> Won't touch schema or code</div></div>
+        <div class="pain" data-reveal="6"><div class="k">MARKET</div><div><b>36 million</b> small business owners like Mike in the U.S.</div></div>
       </div>
     </div>
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>Persona · The Frustrated Business Owner</span>
     </div>
   </section>
 
-  <!-- 07 Competition -->
-  <section class="s-comp" data-label="Competitive Landscape">
+  <!-- 08 Scorecard -->
+  <section class="s-score" data-label="Competitive Scorecard">
     <div class="slide-pad">
-      <div class="eyebrow">Competition</div>
-      <div class="title">Enterprise tools <em style="font-family:'Instrument Serif',serif; color:var(--blue-bright); font-style:italic; font-weight:400;">tell</em>. Gleo <em style="font-family:'Instrument Serif',serif; color:var(--blue-bright); font-style:italic; font-weight:400;">fixes</em>.</div>
+      <div class="eyebrow">Competition Snapshot</div>
+      <div class="h1">The scorecard is <em>clear</em> in one glance.</div>
     </div>
-    <div class="slide-num">06 / 10</div>
+    <div class="slide-num">07 / 11</div>
 
-    <div class="grid">
-      <div class="col them">
-        <h3>Incumbents</h3>
-        <div class="name">Profound · AthenaHQ · Goodie</div>
-        <div class="sub">"Enterprise GEO monitoring"</div>
-        <div class="row" data-reveal="1"><div class="lbl">Built for</div><div class="val">Enterprise teams with in-house developers</div></div>
-        <div class="row" data-reveal="2"><div class="lbl">What it does</div><div class="val">Tells you the problem. Doesn't fix it.</div></div>
-        <div class="row" data-reveal="3"><div class="lbl">Time to value</div><div class="val">Weeks of engineering work</div></div>
-        <div class="price" data-reveal="4">Starting at<span class="big" style="color: var(--ink);">$500<span style="font-size:24px; color: var(--ink-mute); margin-left: 6px;">/mo</span></span></div>
+    <div class="card">
+      <div class="header">
+        <div><div class="h-main">Metric</div></div>
+        <div><div class="h-main">Incumbents</div><div class="h-sub">Profound · AthenaHQ · Goodie</div></div>
+        <div><div class="h-main">Gleo</div><div class="h-sub">SMB execution layer</div></div>
       </div>
-
-      <div class="col us">
-        <h3>Gleo</h3>
-        <div class="name">gleo<span style="color:var(--blue-bright)">.</span></div>
-        <div class="sub">"AI influence for small businesses"</div>
-        <div class="row" data-reveal="1"><div class="lbl">Built for</div><div class="val">Every small business — <b>no dev team required</b></div></div>
-        <div class="row" data-reveal="2"><div class="lbl">What it does</div><div class="val"><b>Applies changes automatically</b>, in 60 seconds</div></div>
-        <div class="row" data-reveal="3"><div class="lbl">Time to value</div><div class="val"><b>One minute</b>, live in WordPress</div></div>
-        <div class="price" data-reveal="4">Starting at<span class="big">$49<span class="mo">/mo</span></span></div>
+      <div class="row" data-reveal="1">
+        <div class="metric">Setup Time</div>
+        <div class="them">Weeks</div>
+        <div class="us">~60 sec</div>
+      </div>
+      <div class="row" data-reveal="2">
+        <div class="metric">Who It's For</div>
+        <div class="them">Enterprise teams</div>
+        <div class="us">SMB owners</div>
+      </div>
+      <div class="row" data-reveal="3">
+        <div class="metric">Fixes Applied?</div>
+        <div class="them">No (monitor only)</div>
+        <div class="us">Yes, automatic</div>
+      </div>
+      <div class="row" data-reveal="4">
+        <div class="metric">Starting Price</div>
+        <div class="them">$500/mo</div>
+        <div class="us">$49/mo</div>
+      </div>
+      <div class="row" data-reveal="5">
+        <div class="metric">Outcome</div>
+        <div class="them">Insights only</div>
+        <div class="us">Mentions increase</div>
       </div>
     </div>
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>10× cheaper, 100× faster, built for Mike</span>
     </div>
   </section>
 
-  <!-- 08 GTM -->
+  <!-- 09 GTM -->
   <section class="s-gtm" data-label="Go-To-Market">
     <div class="slide-pad">
       <div class="eyebrow">Go-To-Market</div>
-      <div class="h1">Two loops to <em>100 users</em> from one spark.</div>
+      <div class="h1">Distribution <em>that compounds</em>.</div>
     </div>
-    <div class="slide-num">07 / 10</div>
+    <div class="slide-num">08 / 11</div>
 
-    <div class="two-col">
-      <div class="gtm-card" data-reveal="1">
-        <div class="tag">01 · Content-led</div>
-        <div class="t">Before-and-after reels.</div>
-        <div class="flow">
-          <div class="node">Run audit on real SMB</div>
-          <div class="arr">→</div>
-          <div class="node">Post before / after reel</div>
-          <div class="arr">→</div>
-          <div class="node">SMBs sign up</div>
-        </div>
-        <div class="big-num" style="font-size: 130px;">500<span class="plus">+</span></div>
-        <div class="result"><b>customers per viral reel.</b> More customers → more proof → more reels.</div>
+    <div class="hub-wrap">
+      <div class="wl-panel">
+        <div class="statline" data-reveal="1"><em>50+</em> clients from <em>one</em> partnership.</div>
+        <ul>
+          <li data-reveal="2">Sell Gleo to <b>digital marketing agencies</b> that run <b>Google Ads and SEO</b> for SMBs.</li>
+          <li data-reveal="3">They usually have <b>20–100 clients</b> each — and need an <b>AI solution</b> they can offer those accounts.</li>
+          <li data-reveal="4">They <b>offer Gleo</b> to their clients — under their brand, we run the engine.</li>
+        </ul>
       </div>
-
-      <div class="gtm-card" data-reveal="2" style="background: linear-gradient(165deg, #0B2B7A 0%, #1E5FE0 100%); border-color: var(--blue); color: #FFFFFF; box-shadow: 0 20px 80px rgba(46,123,255,0.3);">
-        <div class="tag" style="color: #CFE0FF;">02 · Partnerships</div>
-        <div class="t" style="color: #FFFFFF;">White-label for agencies.</div>
-        <div class="flow">
-          <div class="node" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">Digital agency</div>
-          <div class="arr" style="color: #CFE0FF;">→</div>
-          <div class="node" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">Bundles Gleo w/ SEO</div>
-          <div class="arr" style="color: #CFE0FF;">→</div>
-          <div class="node" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">Resells to their SMBs</div>
+      <div class="hub-shell" data-reveal="5">
+        <div class="hub-link-wrap" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <!-- Hub→spoke segments (26%–74% along each ray): uniform scale (meet), no run past tiles -->
+            <g stroke="rgba(30,95,224,0.26)" stroke-width="0.48" fill="none" stroke-linecap="round">
+              <line x1="41.33" y1="41.33" x2="25.33" y2="25.33" />
+              <line x1="50" y1="41.33" x2="50" y2="25.33" />
+              <line x1="58.67" y1="41.33" x2="74.67" y2="25.33" />
+              <line x1="41.33" y1="50" x2="25.33" y2="50" />
+              <line x1="58.67" y1="50" x2="74.67" y2="50" />
+              <line x1="41.33" y1="58.67" x2="25.33" y2="74.67" />
+              <line x1="50" y1="58.67" x2="50" y2="74.67" />
+              <line x1="58.67" y1="58.67" x2="74.67" y2="74.67" />
+            </g>
+          </svg>
         </div>
-        <div class="big-num" style="font-size: 130px; color: #FFFFFF;">100<span class="plus" style="color: #CFE0FF;">+</span></div>
-        <div class="result" style="color: #E8F0FF;"><b style="color: #FFFFFF;">customers per partnership.</b> One deal, hundreds of SMBs — distribution we don't have to build.</div>
+        <div class="hub-grid">
+          <div class="node"><div class="t">Smiles Dental</div><div class="d">San Jose</div></div>
+          <div class="node"><div class="t">Bay Breeze HVAC</div><div class="d">Bay Area</div></div>
+          <div class="node"><div class="t">Pierce Law Group</div><div class="d">Peninsula</div></div>
+          <div class="node"><div class="t">South Bay Auto Care</div><div class="d">South Bay</div></div>
+          <div class="node center"><div class="t">Agency Partnerships</div></div>
+          <div class="node"><div class="t">Glow Medical Spa</div><div class="d">Santa Clara</div></div>
+          <div class="node"><div class="t">FixRight Home Services</div><div class="d">Cupertino</div></div>
+          <div class="node"><div class="t">AquaFlow Plumbing</div><div class="d">Sunnyvale</div></div>
+          <div class="node"><div class="t">Little Oaks Pediatrics</div><div class="d">San Mateo</div></div>
+        </div>
       </div>
     </div>
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>Two loops, compounding</span>
     </div>
   </section>
 
-  <!-- 09 Pricing -->
+  <!-- 10 Pricing -->
   <section class="s-pricing" data-label="Pricing">
     <div class="slide-pad">
       <div class="eyebrow">Pricing</div>
       <div class="h1">Cheap to start. Grows with you.</div>
     </div>
-    <div class="slide-num">08 / 10</div>
+    <div class="slide-num">09 / 11</div>
 
     <div class="two">
       <div class="price-card one" data-reveal="1">
@@ -1126,18 +1484,16 @@
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>A fraction of what the incumbents charge</span>
     </div>
   </section>
 
-  <!-- 10 Team -->
+  <!-- 11 Team -->
   <section class="s-team" data-label="The Team">
     <div class="slide-pad">
       <div class="eyebrow">The Team</div>
       <div class="h1">From <em>debate stage</em> to startup pivot.</div>
     </div>
-    <div class="slide-num">09 / 10</div>
+    <div class="slide-num">10 / 11</div>
 
     <div class="members" data-reveal="1">
       <div class="member">
@@ -1155,8 +1511,7 @@
     </div>
 
     <div class="origin" data-reveal="2">
-      We met through <b>speech &amp; debate</b> at Bellarmine —<br/>
-      trained to think fast and change direction.<br/><br/>
+      We met through <b>speech &amp; debate</b> at Bellarmine, trained to think fast.<br/><br/>
       We built websites for small businesses,<br/>
       then realized <em>websites don't bring customers anymore.</em><br/><br/>
       <b>AI does.</b> So we built Gleo.
@@ -1174,28 +1529,26 @@
         <div class="journey-icon">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="4" width="20" height="14" rx="3" fill="#1E5FE0" opacity="0.25" stroke="#1E5FE0" stroke-width="1.6"/><line x1="8" y1="22" x2="18" y2="22" stroke="#1E5FE0" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="18" x2="13" y2="22" stroke="#1E5FE0" stroke-width="2"/></svg>
         </div>
-        <div class="journey-label"><b>Built 12+ SMB Websites</b><br/>Saw AI eating their traffic</div>
+        <div class="journey-label"><b>Built SMB Websites</b><br/>Saw AI eating their traffic</div>
       </div>
       <div class="journey-arrow"></div>
       <div class="journey-node">
         <div class="journey-icon">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" fill="#1E5FE0" opacity="0.15" stroke="#1E5FE0" stroke-width="1.6"/><path d="M9 13l3 3 5-5" stroke="#1E5FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="journey-label"><b>Founded Gleo</b><br/>2025 · Santa Clara University</div>
+        <div class="journey-label"><b>Founded Gleo</b><br/>2025</div>
       </div>
     </div>
 
     <div class="wordmark-footer">
       <span class="wm">gleo<b>.</b></span>
-      <span class="sep"></span>
-      <span>Bellarmine College Preparatory</span>
     </div>
   </section>
 
-  <!-- 11 Close -->
+  <!-- 12 Close -->
   <section class="s-close" data-label="Closing">
     <div class="grid-bg" style="position:absolute;inset:0;background-image:linear-gradient(rgba(10,14,26,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(10,14,26,0.06) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(1400px 900px at 50% 50%, #000 40%, transparent 75%); opacity: 0.8;"></div>
-    <div class="slide-num" style="color: var(--ink-mute)">10 / 10</div>
+    <div class="slide-num" style="color: var(--ink-mute)">11 / 11</div>
     <div class="content">
       <div class="sub">The New SEO for the AI Era</div>
       <div class="big-logo">gleo<span class="dot">.</span></div>
@@ -1250,6 +1603,11 @@
   }
 
   deck.addEventListener('slidechange', e => collectSteps(e.detail.slide));
+
+  requestAnimationFrame(() => {
+    const slide = document.querySelector('deck-stage [data-deck-active]');
+    if (slide) collectSteps(slide);
+  });
 
   window.addEventListener('keydown', e => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
